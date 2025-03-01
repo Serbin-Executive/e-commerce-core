@@ -1,8 +1,8 @@
-import CartPage from "@/pages/CartPage";
+import CartPage from "@pages/CartPage";
 import ProductPage from "@/pages/ProductPage";
-import ProductsPage from "@/pages/ProductsPage";
-import NotFoundPage from "@/pages/NotFoundPage";
-import ProductStoryPage from "@/pages/ProductStoryPage";
+import ProductsPage from "@pages/ProductsPage";
+import NotFoundPage from "@pages/NotFoundPage";
+import ProductStoryPage from "@pages/ProductStoryPage";
 import { Navigate, type RouteObject } from "react-router";
 
 export interface IRouterPath {
@@ -30,11 +30,11 @@ export const paths: IPathsObject = {
     },
     PRODUCT: {
         id: "product",
-        path: "/product/:productId",
+        path: "/products/:productId",
     },
     PRODUCT_STORY: {
         id: "product-story",
-        path: "/product/:productId/story",
+        path: "/products/:productId/story",
     },
     NOT_FOUND: {
         id: "notFound",

@@ -1,11 +1,14 @@
 import ApplicationRouter from "@/router";
+import DefaultLayout from "@/layouts/DefaultLayout";
 import { ReactElement } from "react";
-import "./styles.css";
+import "./style.css";
 
 const Application = (): ReactElement => {
     return (
         <div className="application">
-            <ApplicationRouter />
+            <DefaultLayout>
+                <ApplicationRouter />
+            </DefaultLayout>
         </div>
     );
 };

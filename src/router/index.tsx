@@ -9,6 +9,7 @@ const ApplicationRouter = (): ReactElement => {
                 {routes.map((route: RouteObject) => (
                     <Route
                         id={route.id}
+                        key={route.id}
                         path={route.path}
                         element={route.element}
                     />
