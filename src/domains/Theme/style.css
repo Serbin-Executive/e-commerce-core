@@ -1,0 +1,10 @@
+:root {
+    --primary-fill-color: #FFFFFF;
+    --primary-background-color: #F4F4F4;
+    --secondary-background-color: #EBF1E7;
+    --inactive-background-color: #BAC2BB;
+    --secondary-fill-color: #727173;
+    --primary-font-color: #111213;
+    --accent-passive-color: #446E61;
+    --accent-active-color: #67446E;
+}
