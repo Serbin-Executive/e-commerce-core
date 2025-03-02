@@ -1,13 +1,13 @@
 import { type ReactElement } from "react";
 import "./style.css";
 
-export const enum ButtonTypes {
+export const enum ControlButtonTypes {
     PRIMARY = "primary",
     OUTLINED = "outlined",
 }
 
 export interface IControlButton {
-    type: ButtonTypes;
+    type: ControlButtonTypes;
     text: string;
     onClick: () => void;
 }

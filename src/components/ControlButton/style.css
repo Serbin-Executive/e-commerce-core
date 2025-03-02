@@ -17,23 +17,23 @@ button.control-button {
 }
 
 button.control-button.primary {
-    color: #FFFFFF;
-    background-color: #446E61;
+    color: var(--primary-fill-color);
+    background-color: var(--accent-passive-color);
 }
 
 button.control-button.primary:hover {
-    background-color: #67446E;
+    background-color: var(--accent-active-color);
     cursor: pointer;
 }
 
 button.control-button.outlined {
-    color: #446E61;
+    color: var(--accent-passive-color);
     border: 1px solid;
-    border-color: #446E61;
+    border-color: var(--accent-passive-color);
 }
 
 button.control-button.outlined:hover {
-    color: #67446E;
-    border-color: #67446E;
+    color: var(--accent-active-color);
+    border-color: var(--accent-active-color);
     cursor: pointer;
 }
