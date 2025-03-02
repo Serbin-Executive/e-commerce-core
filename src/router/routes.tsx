@@ -11,11 +11,7 @@ export interface IRouterPath {
     label?: string;
 }
 
-export interface IPathsObject {
-    [path: string]: IRouterPath;
-}
-
-export const paths: IPathsObject = {
+export const paths = {
     HOME: {
         id: "home",
         path: "/",
