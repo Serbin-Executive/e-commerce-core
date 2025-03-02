@@ -1,3 +1,25 @@
-.sprite-icon:hover {
+button.icon-button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button.icon-button:active {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button.icon-button:focus {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button.icon-button:hover {
     cursor: pointer;
+
+    background: none;
+    border: none;
+    outline: none;
 }

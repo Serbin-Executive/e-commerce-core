@@ -1,5 +1,6 @@
 import { useState, type ReactElement } from "react";
 import "./style.css";
+import SpriteIcon from "../SpriteIcon";
 
 export interface IIconButtonProps {
     iconId: string;
@@ -9,7 +10,6 @@ export interface IIconButtonProps {
     height?: string;
 }
 
-const SVG_SPRITE_LINK_PATH: string = "/src/assets/sprite.svg#";
 const DEFAULT_ICON_BUTTON_WIDTH: string = "30px";
 const DEFAULT_ICON_BUTTON_HEIGHT: string = "30px";
 const ACTIVE_ICON_SUFFIX: string = "-active";
@@ -35,16 +35,14 @@ const IconButton = ({
         !isMouseOver && !isActive ? iconId : `${iconId}${ACTIVE_ICON_SUFFIX}`;
 
     return (
-        <svg
-            className="sprite-icon"
+        <button
+            className="icon-button"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
-            width={width}
-            height={height}
         >
-            <use href={`${SVG_SPRITE_LINK_PATH}${currentIconId}`} />
-        </svg>
+            <SpriteIcon iconId={currentIconId} width={width} height={height} />
+        </button>
     );
 };
 
