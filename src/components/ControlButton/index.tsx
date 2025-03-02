@@ -6,13 +6,13 @@ export const enum ButtonTypes {
     OUTLINED = "outlined",
 }
 
-export interface IButton {
+export interface IControlButton {
     type: ButtonTypes;
     text: string;
     onClick: () => void;
 }
 
-const Button = ({ type, text, onClick }: IButton): ReactElement => {
+const ControlButton = ({ type, text, onClick }: IControlButton): ReactElement => {
     return (
         <button className={`control-button ${type}`} onClick={onClick} title={text}>
             {text}
@@ -20,4 +20,4 @@ const Button = ({ type, text, onClick }: IButton): ReactElement => {
     );
 };
 
-export default Button;
+export default ControlButton;
