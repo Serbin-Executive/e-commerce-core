@@ -3,6 +3,8 @@ import "./style.css";
 
 export interface IIconButtonProps {
     iconId: string;
+    isActive: boolean;
+    onClick: () => void;
     size?: string;
 }
 
@@ -12,6 +14,8 @@ export const ACTIVE_ICON_ID: string = "-active";
 
 const IconButton = ({
     iconId,
+    isActive,
+    onClick,
     size = DEFAULT_ICON_BUTTON_SIZE,
 }: IIconButtonProps): ReactElement => {
     const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false);
@@ -20,7 +24,7 @@ const IconButton = ({
         setIsMouseEnter(!isMouseEnter);
     };
 
-    const currentIconId = isMouseEnter ? `${iconId}${ACTIVE_ICON_ID}` : iconId;
+    const currentIconId = isMouseEnter || isActive ? `${iconId}${ACTIVE_ICON_ID}` : iconId;
 
     return (
         <div
@@ -28,6 +32,7 @@ const IconButton = ({
             style={{ width: size, height: size }}
             onMouseEnter={handleChangeMouseEnterStatus}
             onMouseLeave={handleChangeMouseEnterStatus}
+            onClick={onClick}
         >
             <svg width={"100%"} height={"100%"}>
                 <use
