@@ -1,22 +1,22 @@
 import { type ReactElement } from "react";
 import "./style.css";
 
-export const enum ButtonStatusList {
+export const enum ButtonTypes {
     PRIMARY = "primary",
     OUTLINED = "outlined",
 }
 
 export interface IButton {
-    status: string;
+    type: ButtonTypes;
     text: string;
     onClick: () => void;
 }
 
-const Button = ({status,text, onClick}: IButton): ReactElement => {
-    return(
-        <div className="button-container">
-            <button className={status} onClick={onClick}>{text}</button>
-        </div>
+const Button = ({ type, text, onClick }: IButton): ReactElement => {
+    return (
+        <button className={`control-button ${type}`} onClick={onClick} title={text}>
+            {text}
+        </button>
     );
 };
 

@@ -1,52 +1,35 @@
-:root {
-    --default-button-font-weight: 700;
-    --default-button-font-size: 18px;
-    --default-button-line-height: 16px;
-    --default-button-letter-spacing: -0.5%;
-    --default-button-text-align: center;
-    --default-button-border-radius: 8px;
-    --default-button-padding: 15px 40px;
-    --default-button-transition: 0.35s;
-    --primary-button-color: #FFFFFF;
-    --primary-button-background-color: #446E61;
-    --primary-button-hover-background-color: #67446E;
-    --outlined-button-border: 1px solid;
-    --outlined-button-color: #446E61;
-    --outlined-button-hover-color: #67446E;
-}
-
-button {
-    font-weight: var(--default-button-font-weight);
-    font-size: var(--default-button-font-size);
-    line-height: var(--default-button-line-height);
-    letter-spacing: var(--default-button-letter-spacing);
-    text-align: var(--default-button-text-align);
-    border-radius: var(--default-button-border-radius);
-    padding: var(--default-button-padding);
-    transition: var(--default-button-transition);
+button.control-button {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: -0.5%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 15px 40px;
+    transition: 0.35s;
     background: none;
     border: none;
     outline: none;
 }
 
-button.primary {
-    color: var(--primary-button-color);
-    background-color: var(--primary-button-background-color);
+button.control-button.primary {
+    color: #FFFFFF;
+    background-color: #446E61;
 }
 
-button.primary:hover {
-    background-color: var(--primary-button-hover-background-color);
+button.control-button.primary:hover {
+    background-color: #67446E;
     cursor: pointer;
 }
 
-button.outlined {
-    color: var(--outlined-button-color);
-    border: var(--outlined-button-border);
-    border-color: var(--outlined-button-color);
+button.control-button.outlined {
+    color: #446E61;
+    border: 1px solid;
+    border-color: #446E61;
 }
 
-button.outlined:hover {
-    color: var(--outlined-button-hover-color);
-    border-color: var(--outlined-button-hover-color);
+button.control-button.outlined:hover {
+    color: #67446E;
+    border-color: #67446E;
     cursor: pointer;
 }
