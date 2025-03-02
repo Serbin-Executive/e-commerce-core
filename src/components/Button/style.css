@@ -1,0 +1,52 @@
+:root {
+    --default-button-font-weight: 700;
+    --default-button-font-size: 18px;
+    --default-button-line-height: 16px;
+    --default-button-letter-spacing: -0.5%;
+    --default-button-text-align: center;
+    --default-button-border-radius: 8px;
+    --default-button-padding: 15px 40px;
+    --default-button-transition: 0.35s;
+    --primary-button-color: #FFFFFF;
+    --primary-button-background-color: #446E61;
+    --primary-button-hover-background-color: #67446E;
+    --outlined-button-border: 1px solid;
+    --outlined-button-color: #446E61;
+    --outlined-button-hover-color: #67446E;
+}
+
+button {
+    font-weight: var(--default-button-font-weight);
+    font-size: var(--default-button-font-size);
+    line-height: var(--default-button-line-height);
+    letter-spacing: var(--default-button-letter-spacing);
+    text-align: var(--default-button-text-align);
+    border-radius: var(--default-button-border-radius);
+    padding: var(--default-button-padding);
+    transition: var(--default-button-transition);
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button.primary {
+    color: var(--primary-button-color);
+    background-color: var(--primary-button-background-color);
+}
+
+button.primary:hover {
+    background-color: var(--primary-button-hover-background-color);
+    cursor: pointer;
+}
+
+button.outlined {
+    color: var(--outlined-button-color);
+    border: var(--outlined-button-border);
+    border-color: var(--outlined-button-color);
+}
+
+button.outlined:hover {
+    color: var(--outlined-button-hover-color);
+    border-color: var(--outlined-button-hover-color);
+    cursor: pointer;
+}
