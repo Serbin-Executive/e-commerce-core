@@ -1,0 +1,8 @@
+.product {
+    padding: 10px;
+    border: 1px solid forestgreen;
+}
+
+.product:hover {
+    border-color: aqua;
+}
