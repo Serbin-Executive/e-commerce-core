@@ -1,5 +1,4 @@
 import { type ReactElement } from "react";
-import "./style.css";
 
 export interface ISpriteIconProps {
     iconId: string;
