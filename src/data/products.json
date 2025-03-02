@@ -1,0 +1,77 @@
+[
+    {
+        "id": "0",
+        "name": "Ганджубасик",
+        "price": "3200",
+        "story": "Really good man, really good!",
+        "images": [
+            {
+                "src": "images/products/grass.png"
+            }
+        ],
+        "characteristics": [
+            {
+                "width": "20",
+                "height": "20",
+                "weight": "50g"
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "name": "Ганджубасик Сушеный (10 грамм)",
+        "price": "3700",
+        "package": "10",
+        "story": "Really good man, really good!",
+        "images": [
+            {
+                "src": "images/products/grass.png"
+            }
+        ],
+        "characteristics": [
+            {
+                "width": "20",
+                "height": "20",
+                "weight": "10g"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Ганджубасик Отборный (30 грамм)",
+        "price": "5200",
+        "package": "30",
+        "story": "Really good man, really good!",
+        "images": [
+            {
+                "src": "images/products/grass.png"
+            }
+        ],
+        "characteristics": [
+            {
+                "width": "20",
+                "height": "20",
+                "weight": "30g"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Чай (Правда) (30 грамм)",
+        "price": "9200",
+        "package": "30",
+        "story": "Really good man, really good!",
+        "images": [
+            {
+                "src": "images/products/grass.png"
+            }
+        ],
+        "characteristics": [
+            {
+                "width": "20",
+                "height": "20",
+                "weight": "30g"
+            }
+        ]
+    }
+]
