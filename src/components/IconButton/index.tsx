@@ -5,41 +5,46 @@ export interface IIconButtonProps {
     iconId: string;
     isActive: boolean;
     onClick: () => void;
-    size?: string;
+    width?: string;
+    height?: string;
 }
 
-export const SVG_SPRITE_LINK_PATH: string = "/src/assets/sprite.svg#";
-export const DEFAULT_ICON_BUTTON_SIZE: string = "30px";
-export const ACTIVE_ICON_ID: string = "-active";
+const SVG_SPRITE_LINK_PATH: string = "/src/assets/sprite.svg#";
+const DEFAULT_ICON_BUTTON_WIDTH: string = "30px";
+const DEFAULT_ICON_BUTTON_HEIGHT: string = "30px";
+const ACTIVE_ICON_SUFFIX: string = "-active";
 
 const IconButton = ({
     iconId,
     isActive,
     onClick,
-    size = DEFAULT_ICON_BUTTON_SIZE,
+    width = DEFAULT_ICON_BUTTON_WIDTH,
+    height = DEFAULT_ICON_BUTTON_HEIGHT,
 }: IIconButtonProps): ReactElement => {
-    const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false);
+    const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
-    const handleChangeMouseEnterStatus = (): void => {
-        setIsMouseEnter(!isMouseEnter);
+    const handleMouseEnter = (): void => {
+        setIsMouseOver(true);
     };
 
-    const currentIconId = isMouseEnter || isActive ? `${iconId}${ACTIVE_ICON_ID}` : iconId;
+    const handleMouseLeave = (): void => {
+        setIsMouseOver(false);
+    };
+
+    const currentIconId =
+        !isMouseOver && !isActive ? iconId : `${iconId}${ACTIVE_ICON_SUFFIX}`;
 
     return (
-        <div
-            className="sprite-icon-container"
-            style={{ width: size, height: size }}
-            onMouseEnter={handleChangeMouseEnterStatus}
-            onMouseLeave={handleChangeMouseEnterStatus}
+        <svg
+            className="sprite-icon"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             onClick={onClick}
+            width={width}
+            height={height}
         >
-            <svg width={"100%"} height={"100%"}>
-                <use
-                    href={`${SVG_SPRITE_LINK_PATH}${currentIconId}`}
-                />
-            </svg>
-        </div>
+            <use href={`${SVG_SPRITE_LINK_PATH}${currentIconId}`} />
+        </svg>
     );
 };
 
