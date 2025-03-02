@@ -28,8 +28,7 @@ button.control-button.primary:hover {
 
 button.control-button.outlined {
     color: var(--accent-passive-color);
-    border: 1px solid;
-    border-color: var(--accent-passive-color);
+    border: 1px solid var(--accent-passive-color);
 }
 
 button.control-button.outlined:hover {
