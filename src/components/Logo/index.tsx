@@ -1,38 +1,37 @@
+import SpriteIcon from "../SpriteIcon";
 import { type ReactElement } from "react";
-import { LogoInfoList, LogoStatusesList } from "./meta";
-import "./style.css";
 
-export const LOGO_TITLE: string = "Line";
-export const DEFAULT_LOGO_SIZE: string = "30px";
-export const LOGO_IMAGE_URL: string = "src/assets/images/logo-";
-export const LOGO_IMAGE_EXTENSION: string = ".png";
+export const DEFAULT_LOGO_WIDTH: string = "30px";
+export const DEFAULT_LOGO_HEIGHT: string = "30px";
+
+export const enum LogoStatusesList {
+    ACTIVE = "active",
+    PASSIVE = "passive",
+    PRIMARY = "primary",
+    INACTIVE = "inactive",
+}
 
 export interface ILogoProps {
     status: string;
-    size?: string;
+    onClick: () => void;
+    width?: string;
+    height?: string;
 }
+
+export const LOGO_ICON_PREFIX: string = "logo-";
 
 const Logo = ({
     status,
-    size = DEFAULT_LOGO_SIZE,
+    onClick,
+    width = DEFAULT_LOGO_WIDTH,
+    height = DEFAULT_LOGO_HEIGHT,
 }: ILogoProps): ReactElement => {
-    const { imageId, titleColor } = LogoInfoList[status as LogoStatusesList];
+    const currentIconId: string = `${LOGO_ICON_PREFIX}${status}`;
 
     return (
-        <div className="logo-container" style={{ width: size, height: size }}>
-            <img
-                src={`${LOGO_IMAGE_URL}${imageId}${LOGO_IMAGE_EXTENSION}`}
-                alt="logo"
-            />
-
-            {imageId === LogoStatusesList.INACTIVE ? (
-                <></>
-            ) : (
-                <div className="logo-title" style={{ color: titleColor }}>
-                    {LOGO_TITLE}
-                </div>
-            )}
-        </div>
+        <button className="logo-button" onClick={onClick}>
+            <SpriteIcon iconId={currentIconId} width={width} height={height} />
+        </button>
     );
 };
 
