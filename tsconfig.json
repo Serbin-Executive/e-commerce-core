@@ -31,7 +31,7 @@
             "@domains/*": ["src/domains/*"],
             "@router/*": ["src/router/*"],
             "@utils/*": ["src/utils/*"]
-        }
+        },
     },
-    "include": ["src"]
+    "include": ["src", "vite.config.ts"]
 }
