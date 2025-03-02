@@ -1,0 +1,27 @@
+:root {
+    --logo-title-font-size: 28px;
+    --logo-title-font-weight: 400;
+    --logo-title-line-height: 39.2px;
+    --logo-title-letter-spacing: 0%;
+}
+
+.logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-end;
+}
+
+.logo-container img{
+    height: 100%;
+}
+
+.logo-title {
+    position: relative;
+    top: 10px;
+    font-size: var(--logo-title-font-size);
+    font-weight: var(--logo-title-font-weight);
+    line-height: var(--logo-title-line-height);
+    letter-spacing: var(--logo-title-letter-spacing);
+}
