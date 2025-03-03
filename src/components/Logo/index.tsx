@@ -1,10 +1,11 @@
-import SpriteIcon from "../SpriteIcon";
+import SpriteIcon from "@components/SpriteIcon";
 import { type ReactElement } from "react";
 
 export const DEFAULT_LOGO_WIDTH: string = "30px";
 export const DEFAULT_LOGO_HEIGHT: string = "30px";
+export const LOGO_ICON_PREFIX: string = "logo-";
 
-export const enum LogoStatusesList {
+export const enum LogoTypes {
     ACTIVE = "active",
     PASSIVE = "passive",
     PRIMARY = "primary",
@@ -12,21 +13,19 @@ export const enum LogoStatusesList {
 }
 
 export interface ILogoProps {
-    status: string;
-    onClick: () => void;
+    type: string;
     width?: string;
     height?: string;
+    onClick: () => void;
 }
 
-export const LOGO_ICON_PREFIX: string = "logo-";
-
 const Logo = ({
-    status,
+    type = LogoTypes.PRIMARY,
     onClick,
     width = DEFAULT_LOGO_WIDTH,
     height = DEFAULT_LOGO_HEIGHT,
 }: ILogoProps): ReactElement => {
-    const currentIconId: string = `${LOGO_ICON_PREFIX}${status}`;
+    const currentIconId: string = `${LOGO_ICON_PREFIX}${type}`;
 
     return (
         <button className="logo-button" onClick={onClick}>

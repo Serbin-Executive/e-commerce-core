@@ -24,13 +24,14 @@
 
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"],
             "@pages/*": ["src/pages/*"],
             "@layouts/*": ["src/layouts/*"],
             "@components/*": ["src/components/*"],
             "@domains/*": ["src/domains/*"],
             "@router/*": ["src/router/*"],
-            "@utils/*": ["src/utils/*"]
+            "@services/*": ["src/services/*"],
+            "@utils/*": ["src/utils/*"],
+            "@data/*": ["src/data/*"],
         },
     },
     "include": ["src", "vite.config.ts"]

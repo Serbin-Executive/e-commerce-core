@@ -1,6 +1,6 @@
 import { type ReactElement } from "react";
 import { useNavigate } from "react-router";
-import { paths } from "@/router/routes";
+import { paths } from "@router/routes";
 import "./style.css";
 
 export interface IProductImageData {

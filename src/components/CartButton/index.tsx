@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
-import { paths } from "@/router/routes";
+import { paths } from "@router/routes";
 import { type ReactNode } from "react";
 
 const CartButton = (): ReactNode => {

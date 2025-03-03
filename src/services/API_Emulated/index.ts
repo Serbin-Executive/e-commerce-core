@@ -1,5 +1,5 @@
-import products from "@/data/products.json";
-import { IProduct } from "@/components/Product";
+import products from "@data/products.json";
+import { IProduct } from "@components/Product";
 
 const productsList: IProduct[] = products as unknown as IProduct[];
 

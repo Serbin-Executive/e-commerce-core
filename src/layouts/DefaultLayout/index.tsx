@@ -1,5 +1,6 @@
-import CartButton from "@components/CartButton";
+import Header from "@components/Header";
 import { type ReactElement, type ReactNode } from "react";
+import "./style.css";
 
 export interface IDefaultLayoutProps {
     children: ReactElement | ReactNode;
@@ -8,11 +9,10 @@ export interface IDefaultLayoutProps {
 const DefaultLayout = ({ children }: IDefaultLayoutProps): ReactElement => {
     return (
         <div className="default-layout">
-            <header>
-                <h1>Page Header</h1>
-                <CartButton />
-            </header>
-            <main>{children}</main>
+            <div className="content-container">
+                <Header />
+                <main>{children}</main>
+            </div>
         </div>
     );
 };
