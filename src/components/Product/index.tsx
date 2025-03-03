@@ -1,8 +1,8 @@
+import ProductImage from "@components/ProductImage";
 import { type ReactElement } from "react";
 import { useNavigate } from "react-router";
 import { paths } from "@router/routes";
 import "./style.css";
-import ProductImage from "@components/ProductImage";
 
 export interface IProductImageData {
     src: string;
@@ -42,7 +42,7 @@ const Product = ({ product }: IProductProps): ReactElement => {
             <div className="product-image-container">
                 <ProductImage
                     key={product.id}
-                    imageSrc={firstImageSrc}
+                    src={firstImageSrc}
                     altText={product.id}
                     width="200px"
                 />

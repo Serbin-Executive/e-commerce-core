@@ -6,7 +6,7 @@
         "story": "Really good man, really good!",
         "images": [
             {
-                "src": "images/products/grass.png"
+                "src": "src/assets/images/products/grass.png"
             }
         ],
         "characteristics": [
@@ -25,7 +25,7 @@
         "story": "Really good man, really good!",
         "images": [
             {
-                "src": "images/products/grass.png"
+                "src": "src/assets/images/products/grass.png"
             }
         ],
         "characteristics": [
@@ -44,7 +44,7 @@
         "story": "Really good man, really good!",
         "images": [
             {
-                "src": "images/products/amazonCap.png"
+                "src": "src/assets/images/products/amazonCap.png"
             }
         ],
         "characteristics": [
@@ -63,7 +63,7 @@
         "story": "Really good man, really good!",
         "images": [
             {
-                "src": "images/products/grass.png"
+                "src": "src/assets/images/products/grass.png"
             }
         ],
         "characteristics": [
