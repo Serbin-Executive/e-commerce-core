@@ -1,0 +1,12 @@
+button.logo-button,
+button.logo-button:active, 
+button.logo-button:focus,
+button.logo-button:hover {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button.logo-button:hover {
+    cursor: pointer;
+}

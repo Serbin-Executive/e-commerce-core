@@ -1,5 +1,6 @@
 import SpriteIcon from "@components/SpriteIcon";
 import { type ReactElement } from "react";
+import "./style.css";
 
 export const DEFAULT_LOGO_WIDTH: string = "30px";
 export const DEFAULT_LOGO_HEIGHT: string = "30px";
