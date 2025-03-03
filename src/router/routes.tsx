@@ -1,5 +1,5 @@
 import CartPage from "@pages/CartPage";
-import ProductPage from "@/pages/ProductPage";
+import ProductPage from "@pages/ProductPage";
 import ProductsPage from "@pages/ProductsPage";
 import NotFoundPage from "@pages/NotFoundPage";
 import ProductStoryPage from "@pages/ProductStoryPage";

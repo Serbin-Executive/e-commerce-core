@@ -1,7 +1,6 @@
-import BackButton from "@/components/BackButton";
-import API_Emulated from "@/services/API_Emulated";
+import API_Emulated from "@services/API_Emulated";
 import { Navigate, useParams } from "react-router";
-import { IProduct } from "@/components/Product";
+import { IProduct } from "@components/Product";
 import { type ReactElement } from "react";
 
 const ProductStoryPage = (): ReactElement => {
@@ -20,7 +19,6 @@ const ProductStoryPage = (): ReactElement => {
 
     return (
         <div className="product-story-page">
-            <BackButton />
             <h1>Product Story Page</h1>
             <h2>{product.story}</h2>
         </div>

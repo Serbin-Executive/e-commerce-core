@@ -1,9 +1,8 @@
-import BackButton from "@/components/BackButton";
-import API_Emulated from "@/services/API_Emulated";
+import API_Emulated from "@services/API_Emulated";
 import { Navigate, useNavigate, useParams } from "react-router";
-import { type IProduct } from "@/components/Product";
+import { type IProduct } from "@components/Product";
 import { type ReactElement } from "react";
-import { paths } from "@/router/routes";
+import { paths } from "@router/routes";
 
 const ProductPage = (): ReactElement => {
     const { productId } = useParams();
@@ -26,7 +25,6 @@ const ProductPage = (): ReactElement => {
 
     return (
         <div className="product-page">
-            <BackButton />
             <h1>Product Page</h1>
             <h2>Product {product.name}</h2>
             <h2>
