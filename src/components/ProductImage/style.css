@@ -1,0 +1,7 @@
+img.product-image.contain {
+    object-fit: contain;
+}
+
+img.product-image.square {
+    aspect-ratio: 1/1;
+}
