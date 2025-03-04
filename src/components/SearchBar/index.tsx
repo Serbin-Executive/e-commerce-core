@@ -18,7 +18,7 @@ const SearchBar = ({initialValue, onChange}: ISearchBarProps): ReactElement => {
 
     return(
         <div className="search-bar-container">
-            <input className="search-bar" type="search" value={query} placeholder={"Поиск"} onChange={handleQueryChange}/>
+            <input className="search-bar control-text" type="search" value={query} placeholder={"Поиск"} onChange={handleQueryChange}/>
 
             <SpriteIcon iconId={`${SpriteIconIds.SEARCH}${SpriteIconTypesSuffixes.SECONDARY}`} width="16px"/>
         </div>
