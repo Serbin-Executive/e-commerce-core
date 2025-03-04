@@ -1,5 +1,7 @@
 .search-bar-container {
-    width: 400px;
+    width: 100%;
+    min-width: 400px;
+    max-width: 600px;
     background-color: var(--primary-fill-color);
     display: flex;
     justify-content: space-between;

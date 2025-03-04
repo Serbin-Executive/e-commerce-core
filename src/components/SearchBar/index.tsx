@@ -1,5 +1,5 @@
 import SpriteIcon from "@components/SpriteIcon";
-import { ChangeEvent, useState, type ReactElement } from "react";
+import {type ChangeEvent, type ReactElement, useState } from "react";
 import { SpriteIconIds, SpriteIconTypesSuffixes } from "@utils/constants";
 import "./style.css";
 
@@ -18,7 +18,7 @@ const SearchBar = ({initialValue, onChange}: ISearchBarProps): ReactElement => {
 
     return(
         <div className="search-bar-container">
-            <input className="search-bar" type="text" value={query} placeholder={"Поиск"} onChange={(event) => {handleQueryChange(event)}}/>
+            <input className="search-bar" type="search" value={query} placeholder={"Поиск"} onChange={handleQueryChange}/>
 
             <SpriteIcon iconId={`${SpriteIconIds.SEARCH}${SpriteIconTypesSuffixes.SECONDARY}`} width="16px"/>
         </div>
