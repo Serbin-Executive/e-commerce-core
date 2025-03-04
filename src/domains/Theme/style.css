@@ -55,25 +55,25 @@ h5 {
     color: var(--primary-font-color);
 }
 
-.body {
+.common-text {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0%;
 
-    color: var(--inactive-background-color);
+    color: var(--primary-background-color);
 }
 
-.small-body {
+.small-common-text {
     font-weight: 500;
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 0%;
 
-    color: var(--inactive-background-color);
+    color: var(--primary-background-color);
 }
 
-.inactive-body {
+.inactive-common-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 23px;
@@ -82,7 +82,7 @@ h5 {
     color: #678259;
 }
 
-.prime-text {
+.primary-text {
     font-weight: 700;
     font-size: 28px;
     line-height: 40px;
@@ -91,7 +91,7 @@ h5 {
     color: var(--accent-active-color);
 }
 
-.small-prime-text {
+.small-primary-text {
     font-weight: 700;
     font-size: 18px;
     line-height: 16px;
@@ -100,22 +100,22 @@ h5 {
     color: var(--accent-active-color);
 }
 
-.control {
+.control-text {
     font-weight: 400;
     font-size: 18px;
     line-height: 16px;
     letter-spacing: -0.5%;
 
-    color: var(--inactive-background-color);
+    color: var(--primary-background-color);
 }
 
-.footnote {
+.footnote-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 23px;
     letter-spacing: 0%;
 
-    color: var(--inactive-background-color);
+    color: var(--primary-background-color);
 }
 
 .dummy-text {
