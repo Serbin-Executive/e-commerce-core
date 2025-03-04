@@ -1,3 +1,4 @@
+import ProductImage from "@components/ProductImage";
 import { type ReactElement } from "react";
 import { useNavigate } from "react-router";
 import { paths } from "@router/routes";
@@ -28,14 +29,24 @@ export interface IProductProps {
 const Product = ({ product }: IProductProps): ReactElement => {
     const navigate = useNavigate();
 
-    const goToProductPage = (): void => {        
+    const firstImageSrc: string = product.images[0].src;
+
+    const goToProductPage = (): void => {
         navigate(`${paths.PRODUCTS.path}/${product.id}`);
-    }
+    };
 
     return (
         <div className="product" onClick={goToProductPage}>
             <h3>Product</h3>
             <h2>{product.name}</h2>
+            <div className="product-image-container">
+                <ProductImage
+                    key={product.id}
+                    src={firstImageSrc}
+                    altText={product.id}
+                    width="200px"
+                />
+            </div>
         </div>
     );
 };
