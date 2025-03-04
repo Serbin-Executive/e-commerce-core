@@ -1,0 +1,12 @@
+.footer-container {
+    width: 100%;
+    padding: 20px 40px;
+    border-radius: 18px 18px 0 0;
+    margin: auto;
+    gap: 40px;
+    background-color: var(--accent-passive-color);
+}
+
+.footer-text {
+    text-align: center;
+}
