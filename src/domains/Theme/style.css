@@ -55,65 +55,74 @@ h5 {
     color: var(--primary-font-color);
 }
 
-.description {
+.body {
     font-weight: 500;
     font-size: 14px;
-    line-height: 19.6px;
+    line-height: 20px;
     letter-spacing: 0%;
+
+    color: var(--inactive-background-color);
 }
 
-.small-description {
+.small-body {
     font-weight: 500;
     font-size: 13px;
     line-height: 24px;
     letter-spacing: 0%;
-    text-align: center;
+
+    color: var(--inactive-background-color);
 }
 
-.additional-description {
+.inactive-body {
     font-weight: 400;
     font-size: 14px;
-    line-height: 22.4px;
+    line-height: 23px;
     letter-spacing: 0%;
 
     color: #678259;
 }
 
-.accent-message {
+.prime-text {
     font-weight: 700;
     font-size: 28px;
-    line-height: 39.2px;
+    line-height: 40px;
     letter-spacing: 0%;
+
+    color: var(--accent-active-color);
 }
 
-.big-accent-message {
+.small-prime-text {
     font-weight: 700;
     font-size: 18px;
     line-height: 16px;
     letter-spacing: -0.5%;
-    text-align: center;
+
+    color: var(--accent-active-color);
 }
 
-.common-message {
+.control {
     font-weight: 400;
     font-size: 18px;
     line-height: 16px;
     letter-spacing: -0.5%;
+
+    color: var(--inactive-background-color);
 }
 
-.characteristic {
+.footnote {
     font-weight: 400;
     font-size: 16px;
-    line-height: 22.4px;
+    line-height: 23px;
     letter-spacing: 0%;
+
+    color: var(--inactive-background-color);
 }
 
-.inactive-title {
+.dummy-text {
     font-weight: 700;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0%;
-    text-align: center;
 
     color: var(--inactive-background-color);
 }
