@@ -34,3 +34,86 @@ body {
 body {
     background-color: var(--secondary-background-color);
 }
+
+h1 {
+    color: var(--primary-font-color);
+}
+
+h2 {
+    color: var(--primary-font-color);
+}
+
+h3 {
+    color: var(--primary-font-color);
+}
+
+h4 {
+    color: var(--primary-font-color);
+}
+
+h5 {
+    color: var(--primary-font-color);
+}
+
+.description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.6px;
+    letter-spacing: 0%;
+}
+
+.small-description {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.additional-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
+    letter-spacing: 0%;
+
+    color: #678259;
+}
+
+.accent-message {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 39.2px;
+    letter-spacing: 0%;
+}
+
+.big-accent-message {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: -0.5%;
+    text-align: center;
+}
+
+.common-message {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: -0.5%;
+}
+
+.characteristic {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    letter-spacing: 0%;
+}
+
+.inactive-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    color: var(--inactive-background-color);
+}
