@@ -1,0 +1,12 @@
+img.product-image {
+    border-radius: var(--content-radius-primary);
+    overflow: hidden;
+}
+
+img.product-image.contain {
+    object-fit: contain;
+}
+
+img.product-image.none {
+    aspect-ratio: 1/1;
+}
