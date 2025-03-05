@@ -4,21 +4,19 @@ import SearchBar from "@components/SearchBar";
 import DropdownList from "@components/DropdownList";
 import { type IProduct } from "@components/Product";
 import { type ReactElement, useState } from "react";
-import {
-    DROPDOWN_INITIAL_VALUE,
-    dropdownItemsList,
-} from "@components/DropdownList/meta";
+import { dropdownItemsList } from "@components/DropdownList/meta";
 
 export const INITIAL_SEARCH_VALUE: string = "";
 
 const ProductsPage = (): ReactElement => {
     const products: IProduct[] = API_Emulated.getProducts();
 
+    const dropdownInitialValue = products[0].name.toLowerCase();
+
     const [searchValue, setSearchValue] =
         useState<string>(INITIAL_SEARCH_VALUE);
-    const [selectedValue, setSelectedValue] = useState<string>(
-        DROPDOWN_INITIAL_VALUE
-    );
+    const [selectedValue, setSelectedValue] =
+        useState<string>(dropdownInitialValue);
 
     return (
         <div className="products-page">
@@ -29,7 +27,7 @@ const ProductsPage = (): ReactElement => {
             />
             <div className="dropdown-list-container">
                 <DropdownList
-                    initialValue={DROPDOWN_INITIAL_VALUE}
+                    value={selectedValue}
                     itemsList={dropdownItemsList}
                     onChange={setSelectedValue}
                 />

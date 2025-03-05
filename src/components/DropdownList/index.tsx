@@ -1,5 +1,5 @@
 import SpriteIcon from "@components/SpriteIcon";
-import { DEFAULT_INITIAL_ITEM, dropdownItemsList } from "./meta";
+import { dropdownItemsList } from "./meta";
 import { type MouseEvent, type ReactElement, useEffect, useState } from "react";
 import { SpriteIconsIds, SpriteIconsTypesSuffixes } from "@utils/constants";
 import "./style.css";
@@ -10,27 +10,18 @@ export interface IDropdownItem {
 }
 
 export interface IDropdownListProps {
-    initialValue: string;
+    value: string;
     itemsList: IDropdownItem[];
     onChange: any;
 }
 
-const getInitialItemByValue = (initialValue: string): IDropdownItem => {
-    const initialItem = dropdownItemsList.find(
-        (dropdownItem) => dropdownItem.value === initialValue
-    );
-
-    return !initialItem ? DEFAULT_INITIAL_ITEM : initialItem;
-};
+const ARROW_ICON_WIDTH: string = "12px";
 
 const DropdownList = ({
-    initialValue,
+    value,
     itemsList,
     onChange,
 }: IDropdownListProps): ReactElement => {
-    const [currentItem, setCurrentItem] = useState<IDropdownItem>(
-        getInitialItemByValue(initialValue)
-    );
     const [isDropdownListOpen, setIsDropdownListOpen] =
         useState<boolean>(false);
 
@@ -38,26 +29,28 @@ const DropdownList = ({
         ? `${SpriteIconsIds.ARROW_UP}${SpriteIconsTypesSuffixes.PRIMARY}`
         : `${SpriteIconsIds.ARROW_DOWN}${SpriteIconsTypesSuffixes.ACTIVE}`;
 
-    useEffect(() => {
-        document.addEventListener("click", closeDropdownList);
+    const openDropdownList = (): void => {
+        setIsDropdownListOpen(true);
+    };
 
-        return () => document.removeEventListener("click", closeDropdownList);
-    }, []);
+    const closeDropdownList = (): void => {
+        setIsDropdownListOpen(false);
+    };
 
-    const toggleDropdownListOpen = (
+    const handleChangeDropdownListOpen = (
         event: MouseEvent<HTMLDivElement>
     ): void => {
         event.stopPropagation();
 
-        setIsDropdownListOpen(!isDropdownListOpen);
+        !isDropdownListOpen ? openDropdownList() : closeDropdownList();
     };
 
-    // const openDropdownList = (): void => {
-    //     setIsDropdownListOpen(true);
-    // };
+    const getCurrentItemByValue = (currentValue: string): IDropdownItem => {
+        const currentItem = dropdownItemsList.find(
+            (dropdowItem) => dropdowItem.value === currentValue
+        );
 
-    const closeDropdownList = (): void => {
-        setIsDropdownListOpen(false);
+        return currentItem!;
     };
 
     const getIsOpenClass = (): string => {
@@ -65,9 +58,7 @@ const DropdownList = ({
     };
 
     const getFontClassByItem = (item: IDropdownItem): string => {
-        return item.value !== currentItem.value
-            ? `control-text`
-            : `control-text-active`;
+        return item.value !== value ? `control-text` : `control-text-active`;
     };
 
     const selectValue = (event: MouseEvent<HTMLDivElement>): void => {
@@ -96,21 +87,34 @@ const DropdownList = ({
             return;
         }
 
-        setCurrentItem(selectedItem);
         onChange(selectedItem.value);
 
         closeDropdownList();
     };
 
+    useEffect(() => {
+        document.addEventListener("click", closeDropdownList);
+
+        return () => document.removeEventListener("click", closeDropdownList);
+    }, []);
+
     return (
         <div className="dropdown-list">
             <div
-                className={`dropdown-list-custom-value control-text${getIsOpenClass()}`}
-                onClick={toggleDropdownListOpen}
+                className={`dropdown-list-custom`}
+                onClick={handleChangeDropdownListOpen}
+                title={getCurrentItemByValue(value).label}
             >
-                {currentItem.label}
+                <div
+                    className={`dropdown-list-custom-value control-text${getIsOpenClass()}`}
+                >
+                    {getCurrentItemByValue(value).label}
+                </div>
 
-                <SpriteIcon iconId={openButtonIconId} width="12px" />
+                <SpriteIcon
+                    iconId={openButtonIconId}
+                    width={ARROW_ICON_WIDTH}
+                />
             </div>
             <div
                 className={`dropdown-options-list${getIsOpenClass()}`}
@@ -123,6 +127,7 @@ const DropdownList = ({
                         className={`dropdown-option ${getFontClassByItem(
                             item
                         )}`}
+                        title={item.label}
                     >
                         {item.label}
                     </div>
