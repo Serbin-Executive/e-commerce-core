@@ -1,5 +1,13 @@
-img.product-image {
+.product-image-container {
+    aspect-ratio: 1/1;
+    background-color: #D9D9D9;
     border-radius: var(--content-radius-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.product-image {
     overflow: hidden;
 }
 

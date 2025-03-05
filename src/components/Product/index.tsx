@@ -39,14 +39,12 @@ const Product = ({ product }: IProductProps): ReactElement => {
         <div className="product" onClick={goToProductPage}>
             <h3>Product</h3>
             <h2>{product.name}</h2>
-            <div className="product-image-container">
-                <ProductImage
-                    key={product.id}
-                    src={firstImageSrc}
-                    altText={product.id}
-                    width="200px"
-                />
-            </div>
+            <ProductImage
+                key={product.id}
+                src={firstImageSrc}
+                altText={product.id}
+                width="200px"
+            />
         </div>
     );
 };

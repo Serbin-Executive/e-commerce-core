@@ -25,12 +25,14 @@ const ProductImage = ({
     const currentWidth: string = !width ? DEFAULT_PRODUCT_IMAGE_WIDTH : width;
 
     return (
-        <img
-            src={src}
-            alt={altText}
-            width={currentWidth}
-            className={`product-image ${currentObjectFitType}`}
-        />
+        <div className="product-image-container" style={{width: width}}>
+            <img
+                src={src}
+                alt={altText}
+                width={currentWidth}
+                className={`product-image ${currentObjectFitType}`}
+            />
+        </div>
     );
 };
 
