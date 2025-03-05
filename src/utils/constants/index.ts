@@ -13,4 +13,5 @@ export const enum SpriteIconsIds {
 export const enum SpriteIconsTypesSuffixes {
     ACTIVE = "-active",
     PRIMARY = "-primary",
+    SECONDARY = "-secondary",
 }
