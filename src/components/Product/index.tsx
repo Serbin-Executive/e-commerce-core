@@ -40,9 +40,8 @@ const Product = ({ product }: IProductProps): ReactElement => {
             <h3>Product</h3>
             <h2>{product.name}</h2>
             <ProductImage
-                key={product.id}
                 src={firstImageSrc}
-                altText={product.id}
+                name={product.name}
                 width="200px"
             />
         </div>
