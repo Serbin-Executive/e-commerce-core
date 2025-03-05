@@ -1,68 +1,131 @@
-import DropdownItem from "@components/DropdownItem";
-import { useState, type ReactElement } from "react";
-import "./style.css";
 import SpriteIcon from "@components/SpriteIcon";
+import { DEFAULT_INITIAL_ITEM, dropdownItemsList } from "./meta";
+import { type MouseEvent, type ReactElement, useEffect, useState } from "react";
 import { SpriteIconsIds, SpriteIconsTypesSuffixes } from "@utils/constants";
+import "./style.css";
 
 export interface IDropdownItem {
-    title: string;
-    key: string;
-}
-
-export type TDropdownItemsList = IDropdownItem[];
-
-export const enum DropdownOpenTypes {
-    OPEN = "open",
-    CLOSE = "close",
+    value: string;
+    label: string;
 }
 
 export interface IDropdownListProps {
-    initialItem: IDropdownItem;
-    itemsList: TDropdownItemsList;
+    initialValue: string;
+    itemsList: IDropdownItem[];
     onChange: any;
 }
 
+const getInitialItemByValue = (initialValue: string): IDropdownItem => {
+    const initialItem = dropdownItemsList.find(
+        (dropdownItem) => dropdownItem.value === initialValue
+    );
+
+    return !initialItem ? DEFAULT_INITIAL_ITEM : initialItem;
+};
+
 const DropdownList = ({
-    initialItem,
+    initialValue,
     itemsList,
     onChange,
 }: IDropdownListProps): ReactElement => {
-    const [currentItem, setCurrentItem] = useState<IDropdownItem>(initialItem);
+    const [currentItem, setCurrentItem] = useState<IDropdownItem>(
+        getInitialItemByValue(initialValue)
+    );
     const [isDropdownListOpen, setIsDropdownListOpen] =
         useState<boolean>(false);
 
-    const openType: string = !isDropdownListOpen ? DropdownOpenTypes.CLOSE : DropdownOpenTypes.OPEN;
-    const openButtonIconId: string = !isDropdownListOpen ? `${SpriteIconsIds.ARROW_UP}${SpriteIconsTypesSuffixes.PRIMARY}` : `${SpriteIconsIds.ARROW_DOWN}${SpriteIconsTypesSuffixes.ACTIVE}`
+    const openButtonIconId: string = !isDropdownListOpen
+        ? `${SpriteIconsIds.ARROW_UP}${SpriteIconsTypesSuffixes.PRIMARY}`
+        : `${SpriteIconsIds.ARROW_DOWN}${SpriteIconsTypesSuffixes.ACTIVE}`;
 
-    const toggleDropdownListOpen = (): void => {
+    useEffect(() => {
+        document.addEventListener("click", closeDropdownList);
+
+        return () => document.removeEventListener("click", closeDropdownList);
+    }, []);
+
+    const toggleDropdownListOpen = (
+        event: MouseEvent<HTMLDivElement>
+    ): void => {
+        event.stopPropagation();
+
         setIsDropdownListOpen(!isDropdownListOpen);
     };
 
-    const selectItem = (selectedItem: IDropdownItem): void => {
-        setCurrentItem(selectedItem);
-        onChange(selectedItem);
+    // const openDropdownList = (): void => {
+    //     setIsDropdownListOpen(true);
+    // };
 
-        toggleDropdownListOpen();
+    const closeDropdownList = (): void => {
+        setIsDropdownListOpen(false);
+    };
+
+    const getIsOpenClass = (): string => {
+        return !isDropdownListOpen ? "" : " open";
+    };
+
+    const getFontClassByItem = (item: IDropdownItem): string => {
+        return item.value !== currentItem.value
+            ? `control-text`
+            : `control-text-active`;
+    };
+
+    const selectValue = (event: MouseEvent<HTMLDivElement>): void => {
+        event.stopPropagation();
+
+        const targetElement = event.target as HTMLElement;
+        const targetItemElement = targetElement.closest(
+            ".dropdown-option"
+        ) as HTMLElement | null;
+
+        if (!targetItemElement) {
+            closeDropdownList();
+
+            return;
+        }
+
+        const targetValue = targetItemElement.getAttribute("data-value");
+
+        const selectedItem = dropdownItemsList.find(
+            (dropdownItem) => dropdownItem.value === targetValue
+        );
+
+        if (!selectedItem) {
+            closeDropdownList();
+
+            return;
+        }
+
+        setCurrentItem(selectedItem);
+        onChange(selectedItem.value);
+
+        closeDropdownList();
     };
 
     return (
-        <div className="dropdown-list-container">
-            <button
-                className={`dropdown-list-open-button ${openType}`}
+        <div className="dropdown-list">
+            <div
+                className={`dropdown-list-custom-value control-text${getIsOpenClass()}`}
                 onClick={toggleDropdownListOpen}
             >
-                {currentItem.title}
+                {currentItem.label}
 
-                <SpriteIcon iconId={openButtonIconId} width="12px"/>
-            </button>
-            <div className={`dropdown-list ${openType}`}>
+                <SpriteIcon iconId={openButtonIconId} width="12px" />
+            </div>
+            <div
+                className={`dropdown-options-list${getIsOpenClass()}`}
+                onClick={selectValue}
+            >
                 {itemsList.map((item) => (
-                    <DropdownItem
-                        key={item.key}
-                        item={item}
-                        isSelect={item.key === currentItem.key}
-                        onClick={selectItem}
-                    />
+                    <div
+                        key={item.value}
+                        data-value={item.value}
+                        className={`dropdown-option ${getFontClassByItem(
+                            item
+                        )}`}
+                    >
+                        {item.label}
+                    </div>
                 ))}
             </div>
         </div>

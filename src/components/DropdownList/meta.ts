@@ -1,21 +1,23 @@
-import { IDropdownItem, TDropdownItemsList } from ".";
+import { IDropdownItem } from ".";
 
-export const INITIAL_ITEM: IDropdownItem = {
-    key: "1",
-    title: "Чай",
-}
+export const DEFAULT_INITIAL_ITEM: IDropdownItem = {
+    value: "май",
+    label: "Май",
+};
 
-export const itemsList: TDropdownItemsList = [
+export const DROPDOWN_INITIAL_VALUE: string = "ганджубасик";
+
+export const dropdownItemsList: IDropdownItem[] = [
     {
-        key: "1",
-        title: "Чай",
+        value: "чай",
+        label: "Чай",
     },
     {
-        key: "2",
-        title: "Май",
+        value: "май",
+        label: "Май",
     },
     {
-        key: "3",
-        title: "Ганджубасик",
-    },
+        value: "ганджубасик",
+        label: "Ганджубасик",
+    }
 ]
