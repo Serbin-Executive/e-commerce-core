@@ -1,10 +1,15 @@
 .footer-container {
     width: 100%;
     padding: 20px 40px;
-    border-radius: 18px 18px 0 0;
-    margin: auto;
+    border-radius: var(--content-radius-primary) var(--content-radius-primary) 0 0;
     gap: 40px;
     background-color: var(--accent-passive-color);
+}
+
+.footer-logo-container {
+    display: block;
+    width: 100%;
+    margin: auto;
 }
 
 .footer-text {

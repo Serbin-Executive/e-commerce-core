@@ -13,9 +13,7 @@ const DefaultLayout = ({ children }: IDefaultLayoutProps): ReactElement => {
             <div className="content-container">
                 <Header />
                 <main>{children}</main>
-                <footer>
-                    <Footer />
-                </footer>
+                <Footer />
             </div>
         </div>
     );

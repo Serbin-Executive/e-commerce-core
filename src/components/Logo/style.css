@@ -5,6 +5,8 @@ button.logo-button:hover {
     background: none;
     border: none;
     outline: none;
+
+    display: block;
 }
 
 button.logo-button:hover {
