@@ -1,13 +1,12 @@
 .application-header {
     width: 100%;
-    position: absolute;
+    position: fixed;
     padding: var(--content-padding);
     max-width: var(--content-width);
     background-color: var(--primary-background-color);
     box-shadow: var(--default-shadow);
     min-height: var(--navbar-height);
     border-radius: 0 0 var(--content-radius-primary) var(--content-radius-primary);
-    overflow: hidden;
     top: 0;
 }
 

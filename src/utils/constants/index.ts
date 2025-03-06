@@ -1,8 +1,6 @@
 export const enum SpriteIconsIds {
     CART = "cart-icon",
     SEARCH = "search-icon",
-    ARROW_LEFT = "arrow-left-icon",
-    ARROW_UP = "arrow-up-icon",
     ARROW_DOWN = "arrow-down-icon",
     LOGO_PASSIVE = "logo-passive-icon",
     LOGO_ACTIVE = "logo-active-icon",

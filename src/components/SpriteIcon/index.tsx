@@ -7,7 +7,7 @@ export interface ISpriteIconProps {
     height?: string;
 }
 
-const SVG_SPRITE_LINK_PATH: string = "/src/assets/sprite.svg#";
+const SVG_SPRITE_LINK_PATH: string = "/src/assets/images/sprite.svg#";
 const DEFAULT_ICON_WIDTH: string = "30px";
 const DEFAULT_ICON_HEIGHT: string = "30px";
 

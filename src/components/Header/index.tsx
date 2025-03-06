@@ -1,5 +1,6 @@
-import Logo, { LogoTypes } from "@components/Logo";
 import HeaderControls from "@components/HeaderControls";
+import ProductsSearch from "@components/ProductsSearch";
+import Logo, { LogoTypes } from "@components/Logo";
 import { useNavigate } from "react-router";
 import { type ReactElement } from "react";
 import { paths } from "@router/routes";
@@ -15,7 +16,8 @@ const Header = (): ReactElement => {
     return (
         <header className="application-header">
             <div className="header-content-wrapper">
-                <Logo type={LogoTypes.PRIMARY} onClick={goToProducts} />
+                <Logo type={LogoTypes.ACTIVE} onClick={goToProducts} />
+                <ProductsSearch />
                 <HeaderControls />
             </div>
         </header>
