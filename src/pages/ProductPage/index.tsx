@@ -1,5 +1,6 @@
+import NotFoundPage from "@pages/NotFoundPage";
 import API_Emulated from "@services/API_Emulated";
-import { Navigate, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { type IProduct } from "@components/Product";
 import { type ReactElement } from "react";
 import { paths } from "@router/routes";
@@ -9,14 +10,14 @@ const ProductPage = (): ReactElement => {
     const navigate = useNavigate();
 
     if (!productId) {
-        return <Navigate to={"*"} />
+        return <NotFoundPage />
     }
 
     const product: IProduct | undefined =
         API_Emulated.getProductById(productId);
 
     if (!product) {
-        return <Navigate to={"*"} />
+        return <NotFoundPage />
     }
 
     const readMoreAboutProduct = (): void => {

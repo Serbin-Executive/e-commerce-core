@@ -1,20 +1,21 @@
+import NotFoundPage from "@pages/NotFoundPage";
 import API_Emulated from "@services/API_Emulated";
-import { Navigate, useParams } from "react-router";
 import { IProduct } from "@components/Product";
+import { useParams } from "react-router";
 import { type ReactElement } from "react";
 
 const ProductStoryPage = (): ReactElement => {
     const { productId } = useParams();
 
     if (!productId) {
-        return <Navigate to={"*"} />
+        return <NotFoundPage />
     }
 
     const product: IProduct | undefined =
         API_Emulated.getProductById(productId);
 
     if (!product) {
-        return <Navigate to={"*"} />
+        return <NotFoundPage />
     }
 
     return (
