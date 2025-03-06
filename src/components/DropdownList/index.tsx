@@ -1,136 +1,121 @@
-import SpriteIcon from "@components/SpriteIcon";
-import { dropdownItemsList } from "./meta";
-import { type MouseEvent, type ReactElement, useEffect, useState } from "react";
 import { SpriteIconsIds, SpriteIconsTypesSuffixes } from "@utils/constants";
+import DropdownListOption, {
+    DATA_ATTRIBUTE,
+    OPTION_CLASS_NAME,
+    type IDropdownListOption,
+} from "@components/DropdownListOption";
+import {
+    useState,
+    useEffect,
+    type Dispatch,
+    type MouseEvent,
+    type ReactElement,
+    type SetStateAction,
+} from "react";
 import "./style.css";
-
-export interface IDropdownItem {
-    value: string;
-    label: string;
-}
 
 export interface IDropdownListProps {
     value: string;
-    itemsList: IDropdownItem[];
-    onChange: any;
+    options: IDropdownListOption[];
+    isDisabled: boolean;
+    onChange: Dispatch<SetStateAction<string>>;
 }
 
-const ARROW_ICON_WIDTH: string = "12px";
+const findOptionByValue = (
+    value: string,
+    options: IDropdownListOption[]
+): IDropdownListOption | undefined =>
+    options.find((option: IDropdownListOption) => option.value === value);
 
 const DropdownList = ({
     value,
-    itemsList,
+    options,
+    isDisabled = false,
     onChange,
 }: IDropdownListProps): ReactElement => {
-    const [isDropdownListOpen, setIsDropdownListOpen] =
-        useState<boolean>(false);
+    const [isListOpen, setIsListOpen] = useState<boolean>(false);
 
-    const openButtonIconId: string = !isDropdownListOpen
-        ? `${SpriteIconsIds.ARROW_UP}${SpriteIconsTypesSuffixes.PRIMARY}`
-        : `${SpriteIconsIds.ARROW_DOWN}${SpriteIconsTypesSuffixes.ACTIVE}`;
+    const [currentItem, setCurrentItem] = useState<
+        IDropdownListOption | undefined
+    >(findOptionByValue(value, options));
 
-    const openDropdownList = (): void => {
-        setIsDropdownListOpen(true);
+    const className: string = `dropdown-list ${isListOpen && "open"} ${
+        isDisabled && "disabled"
+    }`;
+
+    const iconId: string = `${SpriteIconsIds.ARROW_DOWN}${
+        !isListOpen
+            ? SpriteIconsTypesSuffixes.ACTIVE
+            : SpriteIconsTypesSuffixes.ACTIVE // temp
+    }`;
+
+    const closeList = (): void => {
+        setIsListOpen(false);
     };
 
-    const closeDropdownList = (): void => {
-        setIsDropdownListOpen(false);
-    };
-
-    const handleChangeDropdownListOpen = (
-        event: MouseEvent<HTMLDivElement>
-    ): void => {
+    const toggleList = (event: MouseEvent<HTMLDivElement>): void => {
         event.stopPropagation();
 
-        !isDropdownListOpen ? openDropdownList() : closeDropdownList();
-    };
-
-    const getCurrentItemByValue = (currentValue: string): IDropdownItem => {
-        const currentItem = dropdownItemsList.find(
-            (dropdowItem) => dropdowItem.value === currentValue
-        );
-
-        return currentItem!;
-    };
-
-    const getIsOpenClass = (): string => {
-        return !isDropdownListOpen ? "" : " open";
-    };
-
-    const getFontClassByItem = (item: IDropdownItem): string => {
-        return item.value !== value ? `control-text` : `control-text-active`;
+        setIsListOpen(!isListOpen);
     };
 
     const selectValue = (event: MouseEvent<HTMLDivElement>): void => {
-        event.stopPropagation();
+        try {
+            const { target } = event;
 
-        const targetElement = event.target as HTMLElement;
-        const targetItemElement = targetElement.closest(
-            ".dropdown-option"
-        ) as HTMLElement | null;
+            if (!target || !(target instanceof HTMLElement)) {
+                throw new Error("Cannot acquire event.target");
+            }
 
-        if (!targetItemElement) {
-            closeDropdownList();
+            const selectedValue = target
+                .closest(`.${OPTION_CLASS_NAME}`)
+                ?.getAttribute(DATA_ATTRIBUTE);
 
-            return;
+            if (!selectedValue) {
+                throw new Error(
+                    "Cannot obtain selected value. Are you using <DropdownList /> right?"
+                );
+            }
+
+            const selectedItem = findOptionByValue(selectedValue, options);
+
+            if (!selectedItem) {
+                throw new Error(
+                    "Cannot obtain selected item. Are options provided?"
+                );
+            }
+
+            setCurrentItem(selectedItem);
+            onChange(selectedItem.value);
+        } catch (error: any) {
+            console.error(error?.message);
+        } finally {
+            closeList();
         }
-
-        const targetValue = targetItemElement.getAttribute("data-value");
-
-        const selectedItem = dropdownItemsList.find(
-            (dropdownItem) => dropdownItem.value === targetValue
-        );
-
-        if (!selectedItem) {
-            closeDropdownList();
-
-            return;
-        }
-
-        onChange(selectedItem.value);
-
-        closeDropdownList();
     };
 
     useEffect(() => {
-        document.addEventListener("click", closeDropdownList);
+        document.addEventListener("click", closeList);
 
-        return () => document.removeEventListener("click", closeDropdownList);
+        return () => document.removeEventListener("click", closeList);
     }, []);
 
     return (
-        <div className="dropdown-list">
-            <div
-                className={`dropdown-list-custom`}
-                onClick={handleChangeDropdownListOpen}
-                title={getCurrentItemByValue(value).label}
-            >
-                <div
-                    className={`dropdown-list-custom-value control-text${getIsOpenClass()}`}
-                >
-                    {getCurrentItemByValue(value).label}
-                </div>
-
-                <SpriteIcon
-                    iconId={openButtonIconId}
-                    width={ARROW_ICON_WIDTH}
+        <div className={className}>
+            <div className="dropdown-list-head">
+                <DropdownListOption
+                    iconId={iconId}
+                    data={currentItem}
+                    onClick={toggleList}
                 />
             </div>
-            <div
-                className={`dropdown-options-list${getIsOpenClass()}`}
-                onClick={selectValue}
-            >
-                {itemsList.map((item) => (
-                    <div
-                        key={item.value}
-                        data-value={item.value}
-                        className={`dropdown-option ${getFontClassByItem(
-                            item
-                        )}`}
-                        title={item.label}
-                    >
-                        {item.label}
-                    </div>
+            <div className="dropdown-options-list" onClick={selectValue}>
+                {options.map((option: IDropdownListOption) => (
+                    <DropdownListOption
+                        data={option}
+                        key={option.value}
+                        isSelected={option.value === value}
+                    />
                 ))}
             </div>
         </div>

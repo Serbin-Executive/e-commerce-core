@@ -6,10 +6,12 @@
     background-color: var(--accent-passive-color);
 }
 
-.footer-logo-container {
-    display: block;
-    width: 100%;
+.footer-logo-container .logo-button {
     margin: auto;
+}
+
+.footer-logo-container {
+    margin-bottom: 32px;
 }
 
 .footer-text {

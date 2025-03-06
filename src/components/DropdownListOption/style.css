@@ -1,0 +1,23 @@
+.dropdown-list-option {
+    --option-height: 56px;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dropdown-list-option.selected {
+    color: var(--accent-active-color);
+}
+
+.dropdown-list-option-value {
+    height: var(--option-height);
+    line-height: var(--option-height);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: auto;
+}

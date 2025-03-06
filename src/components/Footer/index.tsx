@@ -18,7 +18,7 @@ const Footer = (): ReactElement => {
                 <Logo type={LogoTypes.PRIMARY} onClick={goToProducts} />
             </div>
             <div className="footer-text common-text-small">
-                Сочетает  в себе отличный ассортимент разнообразных сортов чая с
+                Сочетает в себе отличный ассортимент разнообразных сортов чая с
                 чайной утварью и сопутствующими товарами на любой вкус.
             </div>
         </footer>
