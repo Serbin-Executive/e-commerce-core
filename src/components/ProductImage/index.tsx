@@ -3,7 +3,7 @@ import "./style.css";
 
 export interface IProductImageProps {
     src: string;
-    altText: string;
+    name: string;
     width?: string;
 }
 
@@ -16,7 +16,7 @@ const DEFAULT_PRODUCT_IMAGE_WIDTH: string = "100%";
 
 const ProductImage = ({
     src,
-    altText,
+    name,
     width,
 }: IProductImageProps): ReactElement => {
     const currentObjectFitType: string = !width
@@ -25,12 +25,14 @@ const ProductImage = ({
     const currentWidth: string = !width ? DEFAULT_PRODUCT_IMAGE_WIDTH : width;
 
     return (
-        <img
-            src={src}
-            alt={altText}
-            width={currentWidth}
-            className={`product-image ${currentObjectFitType}`}
-        />
+        <div className="product-image-container" style={{ width: width }}>
+            <img
+                src={src}
+                alt={name}
+                width={currentWidth}
+                className={`product-image ${currentObjectFitType}`}
+            />
+        </div>
     );
 };
 
