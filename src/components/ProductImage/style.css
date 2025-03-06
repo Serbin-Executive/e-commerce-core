@@ -1,5 +1,13 @@
-img.product-image {
+.product-image-container {
+    aspect-ratio: 1/1;
+    background-color: var(--image-background-color);
     border-radius: var(--content-radius-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.product-image {
     overflow: hidden;
 }
 
@@ -8,5 +16,6 @@ img.product-image.contain {
 }
 
 img.product-image.none {
+    border-radius: var(--content-radius-primary);
     aspect-ratio: 1/1;
 }
