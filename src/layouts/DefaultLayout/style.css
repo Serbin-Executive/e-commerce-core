@@ -5,7 +5,7 @@
 }
 
 main {
-    min-height: 400px;
+    min-height: 100vh;
     padding: var(--content-padding);
     padding-top: var(--navbar-height);
 }

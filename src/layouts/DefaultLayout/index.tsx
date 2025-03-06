@@ -1,4 +1,5 @@
 import Header from "@components/Header";
+import Footer from "@components/Footer";
 import { type ReactElement, type ReactNode } from "react";
 import "./style.css";
 
@@ -12,6 +13,7 @@ const DefaultLayout = ({ children }: IDefaultLayoutProps): ReactElement => {
             <div className="content-container">
                 <Header />
                 <main>{children}</main>
+                <Footer />
             </div>
         </div>
     );
