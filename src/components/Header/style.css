@@ -1,6 +1,8 @@
 .application-header {
     width: 100%;
     position: fixed;
+    display: flex;
+    align-items: center;
     padding: var(--content-padding);
     max-width: var(--content-width);
     background-color: var(--primary-background-color);
@@ -11,8 +13,9 @@
 }
 
 .header-content-wrapper {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
 }

@@ -1,6 +1,7 @@
 import DropdownList from "@components/DropdownList";
 import { type IDropdownListOption } from "@components/DropdownListOption";
 import { useState, type ReactElement } from "react";
+import "./style.css";
 
 export const dropdownItemsList: IDropdownListOption[] = [
     {

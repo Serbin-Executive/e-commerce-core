@@ -17,7 +17,7 @@ import "./style.css";
 export interface IDropdownListProps {
     value: string;
     options: IDropdownListOption[];
-    isDisabled: boolean;
+    isDisabled?: boolean;
     onChange: Dispatch<SetStateAction<string>>;
 }
 
@@ -41,12 +41,6 @@ const DropdownList = ({
 
     const className: string = `dropdown-list ${isListOpen && "open"} ${
         isDisabled && "disabled"
-    }`;
-
-    const iconId: string = `${SpriteIconsIds.ARROW_DOWN}${
-        !isListOpen
-            ? SpriteIconsTypesSuffixes.ACTIVE
-            : SpriteIconsTypesSuffixes.ACTIVE // temp
     }`;
 
     const closeList = (): void => {
@@ -104,9 +98,9 @@ const DropdownList = ({
         <div className={className}>
             <div className="dropdown-list-head">
                 <DropdownListOption
-                    iconId={iconId}
                     data={currentItem}
                     onClick={toggleList}
+                    iconId={SpriteIconsIds.ARROW_DOWN}
                 />
             </div>
             <div className="dropdown-options-list" onClick={selectValue}>
