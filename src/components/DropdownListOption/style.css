@@ -1,5 +1,5 @@
 .dropdown-list-option {
-    --option-height: 56px;
+    --option-height: var(--control-elements-height);
 
     width: 100%;
     display: flex;
