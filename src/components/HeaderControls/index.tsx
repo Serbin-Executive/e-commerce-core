@@ -1,25 +1,56 @@
-import BackButton from "@components/BackButton";
-import CartButton from "@components/CartButton";
-import { useLocation } from "react-router";
-import { type ReactElement } from "react";
+import IconButton from "@components/IconButton";
+import ProductsContext from "@context/ProductsContext";
+import { useNavigate } from "react-router";
+import { useContext, type ReactElement } from "react";
+import { SpriteIconsIds } from "@utils/constants";
 import { paths } from "@router/routes";
+import "./style.css";
 
-const HeaderControls = (): ReactElement => {
-    const location = useLocation();
-    const isProductsPageActive: boolean =
-        location.pathname === paths.PRODUCTS.path;
+export interface IHeaderControlsProps {
+    isProductsPageActive: boolean;
+}
+
+const HeaderControls = ({
+    isProductsPageActive,
+}: IHeaderControlsProps): ReactElement => {
+    const navigate = useNavigate();
+
+    const { isSearchModeEnabled, setIsSearchModeEnabled } =
+        useContext(ProductsContext);
+
+    const toggleSearchMode = (): void => {
+        setIsSearchModeEnabled(!isSearchModeEnabled);
+    };
+
+    const goToCart = (): void => {
+        navigate(paths.CART.path);
+    };
+
+    const goBack = () => {
+        navigate(-1);
+    };
 
     if (!isProductsPageActive) {
         return (
             <div className="header-controls">
-                <BackButton />
+                <IconButton
+                    width="25px"
+                    iconId={SpriteIconsIds.ARROW_LEFT}
+                    onClick={goBack}
+                />
             </div>
         );
     }
 
     return (
         <div className="header-controls">
-            <CartButton />
+            <IconButton
+                width="25px"
+                iconId={SpriteIconsIds.SEARCH}
+                isActive={isSearchModeEnabled}
+                onClick={toggleSearchMode}
+            />
+            <IconButton width="25px" iconId={SpriteIconsIds.CART} onClick={goToCart} />
         </div>
     );
 };

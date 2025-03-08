@@ -1,7 +1,7 @@
+import type IProduct from "@domains/Product";
 import NotFoundPage from "@pages/NotFoundPage";
 import API_Emulated from "@services/API_Emulated";
 import { useNavigate, useParams } from "react-router";
-import { type IProduct } from "@components/Product";
 import { type ReactElement } from "react";
 import { paths } from "@router/routes";
 import "./style.css";

@@ -1,15 +1,20 @@
 .search-bar-container {
+    height: var(--control-elements-height);
     width: 100%;
     min-width: 400px;
     max-width: 600px;
-    background-color: var(--primary-fill-color);
+    background-color: var(--elements-fill-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px;
+    border: transparent;
+    border-radius: var(--content-radius-secondary);
+}
 
-    border: 0.5px solid var(--primary-font-color);
-    border-radius: 8px;
+.search-bar-container:focus-within,
+.search-bar-container:hover {
+    outline: 0.5px solid var(--accent-passive-color);
 }
 
 input.search-bar,
@@ -23,4 +28,9 @@ input.search-bar:hover {
 
 input.search-bar:hover {
     cursor: pointer;
+}
+
+input.search-bar {
+    flex: auto;
+    height: 100%;
 }

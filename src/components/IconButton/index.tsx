@@ -4,7 +4,8 @@ import SpriteIcon from "../SpriteIcon";
 
 export interface IIconButtonProps {
     iconId: string;
-    isActive: boolean;
+    isActive?: boolean;
+    isDisabled?: boolean;
     onClick: () => void;
     width?: string;
     height?: string;
@@ -17,11 +18,14 @@ const ACTIVE_ICON_SUFFIX: string = "-active";
 const IconButton = ({
     iconId,
     isActive,
+    isDisabled,
     onClick,
     width = DEFAULT_ICON_BUTTON_WIDTH,
     height = DEFAULT_ICON_BUTTON_HEIGHT,
 }: IIconButtonProps): ReactElement => {
     const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+
+    const className: string = `icon-button ${!isDisabled ? "" : "disabled"}`;
 
     const handleMouseEnter = (): void => {
         setIsMouseOver(true);
@@ -36,7 +40,7 @@ const IconButton = ({
 
     return (
         <button
-            className="icon-button"
+            className={className}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}

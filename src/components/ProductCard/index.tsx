@@ -1,30 +1,15 @@
+import type IProduct from "@domains/Product";
 import ProductImage from "@components/ProductImage";
 import { type ReactElement } from "react";
 import { useNavigate } from "react-router";
 import { paths } from "@router/routes";
 import "./style.css";
 
-export interface IProductImageData {
-    src: string;
-}
-
-export interface IProductCharacteristicsData {
-    [characteristic: string]: string | number;
-}
-
-export interface IProduct {
-    id: string;
-    name: string;
-    price: number;
-    package: number | undefined;
-    story: string;
-    images: IProductImageData[];
-    characteristics: IProductCharacteristicsData[];
-}
-
 export interface IProductProps {
     product: IProduct;
 }
+
+const CURRENCY: string = "₽";
 
 const Product = ({ product }: IProductProps): ReactElement => {
     const navigate = useNavigate();
@@ -35,15 +20,17 @@ const Product = ({ product }: IProductProps): ReactElement => {
         navigate(`${paths.PRODUCTS.path}/${product.id}`);
     };
 
+    const productPrice: string = `${product.price}${CURRENCY}`
+
     return (
         <div className="product" onClick={goToProductPage}>
-            <h3>Product</h3>
-            <h2>{product.name}</h2>
-            <ProductImage
-                src={firstImageSrc}
-                name={product.name}
-                width="200px"
-            />
+            <div className="product-image-container">
+                <ProductImage src={firstImageSrc} name={product.name} />
+            </div>
+            <div className="product-info">
+                <div className="product-name common-text" title={product.name }>{product.name}</div>
+                <div className="product-price primary-text-passive" title={productPrice}>{productPrice}</div>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 :root {
     --primary-fill-color: #FFFFFF;
+    --elements-fill-color: #EFEFEF;
     --primary-background-color: #F4F4F4;
     --secondary-background-color: #EBF1E7;
     --inactive-background-color: #BAC2BB;
@@ -8,16 +9,51 @@
     --accent-passive-color: #446E61;
     --accent-active-color: #67446E;
     --image-background-color: #D9D9D9;
-
     --default-shadow-color: rgba(23, 28, 23, 0.58);
 
     --default-shadow: 0 0 4px 0 var(--default-shadow-color);
 
     --navbar-height: 75px;
+    --product-padding: 10px;
     --content-padding: 16px;
     --content-radius-primary: 18px;
     --content-radius-secondary: 8px;
-    --content-width-desktop: 1100px
+    --content-width-desktop: 1100px;
+    --control-elements-height: 45px;
+
+    --transition-time: .3s;
+
+    --disabled-filter: grayscale(.3);
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300;
+    src: url("/src/assets/fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    src: url("/src/assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500;
+    src: url("/src/assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 600;
+    src: url("/src/assets/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    src: url("/src/assets/fonts/Montserrat-ExtraBold.ttf");
 }
 
 * {
@@ -34,6 +70,7 @@ body {
 
 body {
     background-color: var(--secondary-background-color);
+    font-family: "Montserrat";
 }
 
 h1 {
@@ -65,31 +102,31 @@ h5 {
     color: var(--primary-font-color);
 }
 
-.common-text-small {
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 24px;
-    letter-spacing: 0%;
-
-    color: var(--primary-font-color);
-}
-
 .common-text-inactive {
     font-weight: 400;
     font-size: 14px;
     line-height: 23px;
     letter-spacing: 0%;
 
-    color: #678259;
+    color: var(--accent-passive-color);
 }
 
 .primary-text {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 28px;
     line-height: 40px;
     letter-spacing: 0%;
 
     color: var(--accent-active-color);
+}
+
+.primary-text-passive {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 0%;
+
+    color: var(--accent-passive-color);
 }
 
 .primary-text-small {

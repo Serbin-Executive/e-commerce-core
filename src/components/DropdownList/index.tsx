@@ -43,12 +43,6 @@ const DropdownList = ({
         isDisabled && "disabled"
     }`;
 
-    const iconId: string = `${SpriteIconsIds.ARROW_DOWN}${
-        !isListOpen
-            ? SpriteIconsTypesSuffixes.ACTIVE
-            : SpriteIconsTypesSuffixes.ACTIVE // temp
-    }`;
-
     const closeList = (): void => {
         setIsListOpen(false);
     };
@@ -104,9 +98,9 @@ const DropdownList = ({
         <div className={className}>
             <div className="dropdown-list-head">
                 <DropdownListOption
-                    iconId={iconId}
                     data={currentItem}
                     onClick={toggleList}
+                    iconId={SpriteIconsIds.ARROW_DOWN}
                 />
             </div>
             <div className="dropdown-options-list" onClick={selectValue}>

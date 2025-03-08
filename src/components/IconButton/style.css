@@ -1,3 +1,7 @@
+button.icon-button {
+    transition: var(--transition-time);
+}
+
 button.icon-button,
 button.icon-button:active, 
 button.icon-button:focus,
@@ -9,4 +13,9 @@ button.icon-button:hover {
 
 button.icon-button:hover {
     cursor: pointer;
+}
+
+button.icon-button.disabled {
+    pointer-events: none;
+    
 }

@@ -20,16 +20,15 @@ const ProductImage = ({
     width,
 }: IProductImageProps): ReactElement => {
     const currentObjectFitType: string = !width
-        ? ObjectFitTypes.NONE
-        : ObjectFitTypes.CONTAIN;
+        ? ObjectFitTypes.CONTAIN
+        : ObjectFitTypes.NONE;
     const currentWidth: string = !width ? DEFAULT_PRODUCT_IMAGE_WIDTH : width;
 
     return (
-        <div className="product-image-container" style={{ width: width }}>
+        <div className="product-image-slider" style={{ width: currentWidth }}>
             <img
                 src={src}
                 alt={name}
-                width={currentWidth}
                 className={`product-image ${currentObjectFitType}`}
             />
         </div>

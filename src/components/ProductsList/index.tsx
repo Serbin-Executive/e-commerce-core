@@ -1,5 +1,7 @@
+import type IProduct from "@domains/Product";
+import Product from "@components/ProductCard";
 import { memo, type ReactElement } from "react";
-import Product, { type IProduct } from "@components/Product";
+import "./style.css";
 
 export interface IProductsListProps {
     products: IProduct[];
@@ -16,7 +18,6 @@ const ProductsList = memo(({ products }: IProductsListProps): ReactElement => {
 
     return (
         <div className="products-list">
-            <h2>Products</h2>
             {products.map((product: IProduct) => (
                 <Product key={product.id} product={product} />
             ))}

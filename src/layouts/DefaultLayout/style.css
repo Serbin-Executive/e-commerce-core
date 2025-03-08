@@ -9,3 +9,18 @@ main {
     padding: var(--content-padding);
     padding-top: var(--navbar-height);
 }
+
+@media screen and (max-width: 600px) {
+    .products-search {
+        order: 3;
+        width: 100%;
+    }
+
+    main .products-page {
+        padding-top: 60px;
+    }
+
+    .products-search {
+        margin-top: 20px;
+    }
+}
