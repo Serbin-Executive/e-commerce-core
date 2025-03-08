@@ -14,3 +14,5 @@ export const enum SpriteIconsTypesSuffixes {
     PRIMARY = "-primary",
     SECONDARY = "-secondary",
 }
+
+export const CURRENCY: string = "₽";

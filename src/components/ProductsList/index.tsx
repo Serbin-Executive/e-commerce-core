@@ -1,5 +1,5 @@
+import ProductCard from "@components/ProductCard";
 import type IProduct from "@domains/Product";
-import Product from "@components/ProductCard";
 import { memo, type ReactElement } from "react";
 import "./style.css";
 
@@ -19,7 +19,7 @@ const ProductsList = memo(({ products }: IProductsListProps): ReactElement => {
     return (
         <div className="products-list">
             {products.map((product: IProduct) => (
-                <Product key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
             ))}
         </div>
     );

@@ -1,0 +1,23 @@
+.product-additional-info-text {
+    margin-top: 30px;
+}
+
+.product-additional-info-more-button-container {
+    display: none;
+}
+
+.product-additional-info-more-button,
+.product-additional-info-more-button:active,
+.product-additional-info-more-button:focus {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.product-additional-info-more-button:hover {
+    background: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}

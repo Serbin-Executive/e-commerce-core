@@ -1,0 +1,9 @@
+.product-characteristic {
+    display: flex;
+    align-items: flex-end;
+}
+
+.product-characteristic-line {
+    width: 100%;
+    margin: 0;
+}

@@ -10,6 +10,27 @@ main {
     padding-top: var(--navbar-height);
 }
 
+@media screen and (max-width: 720px) {
+    .product-main-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-additional-info-more-button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .product-additional-info-text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .products-search {
         order: 3;

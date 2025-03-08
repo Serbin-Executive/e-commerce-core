@@ -1,0 +1,19 @@
+.product-main-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+.product-main-info-image-container {
+    width: 400px;
+}
+
+.product-main-info-text {
+    width: 600px;
+}
+
+.product-main-info-characteristics-container {
+    margin-top: 100px;
+}
