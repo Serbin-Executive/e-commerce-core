@@ -1,6 +1,6 @@
 import NotFoundPage from "@pages/NotFoundPage";
 import API_Emulated from "@services/API_Emulated";
-import { IProduct } from "@components/Product";
+import { IProduct } from "@components/ProductCard";
 import { useParams } from "react-router";
 import { type ReactElement } from "react";
 
