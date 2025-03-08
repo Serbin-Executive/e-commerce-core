@@ -17,7 +17,7 @@ import "./style.css";
 export interface IDropdownListProps {
     value: string;
     options: IDropdownListOption[];
-    isDisabled: boolean;
+    isDisabled?: boolean;
     onChange: Dispatch<SetStateAction<string>>;
 }
 
