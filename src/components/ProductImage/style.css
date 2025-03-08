@@ -1,14 +1,17 @@
-.product-image-container {
+.product-image-slider {
+    flex-shrink: 0;
     aspect-ratio: 1/1;
     background-color: var(--image-background-color);
     border-radius: var(--content-radius-primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 img.product-image {
-    overflow: hidden;
+    width: 100%;
+    transition: var(--transition-time);
 }
 
 img.product-image.contain {
