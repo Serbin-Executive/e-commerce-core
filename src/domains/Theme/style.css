@@ -29,31 +29,31 @@
 @font-face {
     font-family: "Montserrat";
     font-weight: 300;
-    src: url("/src/assets/fonts/Montserrat-Thin.ttf");
+    src: url("/assets/fonts/Montserrat-Thin.ttf");
 }
 
 @font-face {
     font-family: "Montserrat";
     font-weight: 400;
-    src: url("/src/assets/fonts/Montserrat-Light.ttf");
+    src: url("/assets/fonts/Montserrat-Light.ttf");
 }
 
 @font-face {
     font-family: "Montserrat";
     font-weight: 500;
-    src: url("/src/assets/fonts/Montserrat-Regular.ttf");
+    src: url("/assets/fonts/Montserrat-Regular.ttf");
 }
 
 @font-face {
     font-family: "Montserrat";
     font-weight: 600;
-    src: url("/src/assets/fonts/Montserrat-Bold.ttf");
+    src: url("/assets/fonts/Montserrat-Bold.ttf");
 }
 
 @font-face {
     font-family: "Montserrat";
     font-weight: 700;
-    src: url("/src/assets/fonts/Montserrat-ExtraBold.ttf");
+    src: url("/assets/fonts/Montserrat-ExtraBold.ttf");
 }
 
 * {
