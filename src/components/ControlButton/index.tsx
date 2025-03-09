@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { type ReactNode, type ReactElement } from "react";
 import "./style.css";
 
 export const enum ControlButtonTypes {
@@ -8,14 +8,24 @@ export const enum ControlButtonTypes {
 
 export interface IControlButton {
     type: ControlButtonTypes;
-    text: string;
+    title?: string;
+    children: ReactNode;
     onClick: () => void;
 }
 
-const ControlButton = ({ type, text, onClick }: IControlButton): ReactElement => {
+const ControlButton = ({
+    type,
+    title,
+    children,
+    onClick,
+}: IControlButton): ReactElement => {
     return (
-        <button className={`control-button ${type}`} onClick={onClick} title={text}>
-            {text}
+        <button
+            className={`control-button ${type}`}
+            onClick={onClick}
+            title={title}
+        >
+            {children}
         </button>
     );
 };
