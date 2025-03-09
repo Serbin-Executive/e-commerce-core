@@ -2,6 +2,7 @@ import type IProduct from "@domains/Product";
 import Product from "@components/ProductCard";
 import { memo, type ReactElement } from "react";
 import "./style.css";
+import DummyBlock from "@components/DummyBlock";
 
 export interface IProductsListProps {
     products: IProduct[];
@@ -10,9 +11,7 @@ export interface IProductsListProps {
 const ProductsList = memo(({ products }: IProductsListProps): ReactElement => {
     if (!products?.length) {
         return (
-            <div className="dummy-content">
-                <h2>No products</h2>
-            </div>
+            <DummyBlock message="По данному запросу ничего не найдено" />
         );
     }
 

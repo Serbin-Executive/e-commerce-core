@@ -2,6 +2,7 @@ import type IProduct from "@domains/Product";
 import API_Emulated from "@services/API_Emulated";
 import ProductsList from "@components/ProductsList";
 import { type ReactElement } from "react";
+import "./style.css";
 
 export const INITIAL_SEARCH_VALUE: string = "";
 

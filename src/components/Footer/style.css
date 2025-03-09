@@ -1,8 +1,9 @@
 .footer-container {
+    user-select: none;
+    gap: 40px;
     width: 100%;
     padding: 20px 40px;
     border-radius: var(--content-radius-primary) var(--content-radius-primary) 0 0;
-    gap: 40px;
     background-color: var(--accent-passive-color);
 }
 

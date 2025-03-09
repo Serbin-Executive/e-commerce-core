@@ -7,6 +7,7 @@ export const enum SpriteIconsIds {
     LOGO_ACTIVE = "logo-active-icon",
     LOGO_PRIMARY = "logo-primary-icon",
     LOGO_INACTIVE = "logo-inactive-icon",
+    LOGO_DUMMY = "logo-dummy",
 }
 
 export const enum SpriteIconsTypesSuffixes {

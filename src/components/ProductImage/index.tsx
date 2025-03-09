@@ -14,6 +14,7 @@ export const enum ObjectFitTypes {
 
 const DEFAULT_PRODUCT_IMAGE_WIDTH: string = "100%";
 
+// TODO add slider
 const ProductImage = ({
     src,
     name,
