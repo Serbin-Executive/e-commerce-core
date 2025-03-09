@@ -76,10 +76,6 @@ body {
 
 h1 {
     color: var(--primary-font-color);
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 140%;
-    letter-spacing: 0%;
 }
 
 h2 {
@@ -87,6 +83,11 @@ h2 {
 }
 
 h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
     color: var(--primary-font-color);
 }
 
@@ -95,6 +96,11 @@ h4 {
 }
 
 h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
     color: var(--primary-font-color);
 }
 
@@ -203,5 +209,5 @@ h5 {
     line-height: 140%;
     letter-spacing: 0%;
 
-    color: var(--additional-text-font-color);
+    color: var(--primary-font-color);
 }

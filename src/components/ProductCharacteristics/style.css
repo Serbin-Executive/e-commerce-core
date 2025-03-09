@@ -1,0 +1,13 @@
+.product-characteristics-list {
+    margin-top: 30px;
+}
+
+.product-characteristics-list .product-characteristic {
+    display: flex;
+    align-items: flex-end;
+}
+
+.product-characteristic .bottom-line {
+    width: 100%;
+    margin: 0;
+}

@@ -1,3 +1,21 @@
 .product-page {
-    margin-top: 100px;
+    padding-top: calc(var(--content-padding) * 1.5);
+}
+
+.product-page .shopping-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+.product-page .shopping-block .info {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.product-page .shopping-block .product-image-container {
+    width: 400px;
 }

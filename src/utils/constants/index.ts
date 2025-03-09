@@ -16,3 +16,5 @@ export const enum SpriteIconsTypesSuffixes {
 }
 
 export const CURRENCY: string = "₽";
+export const PIECE_PACKAGE: string = "ШТ";
+export const GRAM: string = "г";

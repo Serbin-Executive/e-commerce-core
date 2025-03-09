@@ -1,16 +1,16 @@
 import NotFoundPage from "@pages/NotFoundPage";
 import API_Emulated from "@services/API_Emulated";
-import ProductMainInfo from "@components/ProductMainInfo";
-import ProductAdditionalInfo from "@components/ProductAddtionalInfo";
+import ProductShoppingInfo from "@components/ProductShoppingInfo";
+import ProductStoryBlock from "@components/ProductStoryBlock";
+import ProductImage from "@components/ProductImage";
+import ProductCharacteristics from "@components/ProductCharacteristics";
 import type IProduct from "@domains/Product";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { type ReactElement } from "react";
-import { paths } from "@router/routes";
 import "./style.css";
 
 const ProductPage = (): ReactElement => {
     const { productId } = useParams();
-    const navigate = useNavigate();
 
     if (!productId) {
         return <NotFoundPage />;
@@ -23,25 +23,23 @@ const ProductPage = (): ReactElement => {
         return <NotFoundPage />;
     }
 
-    const { images, price, name, story, characteristics } = product;
-    const firstImageSrc = images[0].src;
-
-    const readMoreAboutProduct = (): void => {
-        navigate(`${paths.PRODUCTS.path}/${productId}/story`); // TODO constructor
-    };
-
     return (
         <div className="product-page">
-            <ProductMainInfo
-                name={name}
-                imageSrc={firstImageSrc}
-                price={price}
-                characteristics={characteristics}
-            />
-            <ProductAdditionalInfo
-                story={story}
-                readMoreAboutProduct={readMoreAboutProduct}
-            />
+            <div className="shopping-block">
+                <div className="product-image-container">
+                    <ProductImage
+                        src={product.images[0].src}
+                        name={product.name}
+                    />
+                </div>
+                <div className="info">
+                    <ProductShoppingInfo product={product} />
+                    <ProductCharacteristics
+                        characteristics={product.characteristics}
+                    />
+                    <ProductStoryBlock product={product} />
+                </div>
+            </div>
         </div>
     );
 };
