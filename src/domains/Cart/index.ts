@@ -8,6 +8,10 @@ export default class Cart {
         this.records = new Map();
     }
 
+    public getSize(): number {
+        return this.records.size;
+    }
+
     public clear(): void {
         this.records = new Map();
     }
