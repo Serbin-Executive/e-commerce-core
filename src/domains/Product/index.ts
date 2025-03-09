@@ -10,7 +10,7 @@ export default interface IProduct {
     id: string;
     name: string;
     price: number;
-    package: number | undefined;
+    package?: number;
     story: string;
     images: IProductImageData[];
     characteristics: IProductCharacteristicsData[];

@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+tbody tr:last-child {
+    font-weight: bold;
+}
