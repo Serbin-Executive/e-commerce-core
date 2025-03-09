@@ -1,0 +1,23 @@
+.product-story-block .product-story {
+    margin-top: 30px;
+}
+
+.product-story-block .more-story-button-container {
+    display: none;
+}
+
+.product-story-block .more-story-button-container .more-story-button,
+.product-story-block .more-story-button-container .more-story-button:active,
+.product-story-block .more-story-button-container .more-story-button:focus {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.product-story-block .more-story-button-container .more-story-button:hover {
+    background: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}

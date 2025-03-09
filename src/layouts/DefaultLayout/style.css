@@ -10,6 +10,36 @@ main {
     padding-top: var(--navbar-height);
 }
 
+@media screen and (max-width: 720px) {
+    .product-page .shopping-block {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-page .product-story-block .more-story-button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .product-page .product-story-block .product-story {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        text-overflow: ellipsis;
+    }
+
+    .product-page .shopping-block .info .product-story-block {
+        order: 1;
+    }
+
+    .product-page .shopping-block .info .product-characteristics-list {
+        order: 2;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .products-search {
         order: 3;

@@ -9,6 +9,7 @@
     --accent-passive-color: #446E61;
     --accent-active-color: #67446E;
     --image-background-color: #D9D9D9;
+    --additional-text-font-color: #678259;
     --default-shadow-color: rgba(23, 28, 23, 0.58);
 
     --default-shadow: 0 0 4px 0 var(--default-shadow-color);
@@ -83,6 +84,11 @@ h2 {
 }
 
 h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
     color: var(--primary-font-color);
 }
 
@@ -91,6 +97,11 @@ h4 {
 }
 
 h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
     color: var(--primary-font-color);
 }
 
@@ -119,6 +130,15 @@ h5 {
     letter-spacing: 0%;
 
     color: var(--accent-active-color);
+}
+
+.primary-text-passive-big {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
+    color: var(--accent-passive-color);
 }
 
 .primary-text-passive {
@@ -157,6 +177,15 @@ h5 {
     color: var(--accent-active-color);
 }
 
+.control-text-passive {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
+    color: var(--accent-passive-color);
+}
+
 .footnote-text {
     font-weight: 400;
     font-size: 16px;
@@ -173,4 +202,13 @@ h5 {
     letter-spacing: 0%;
 
     color: var(--inactive-background-color);
+}
+
+.additional-info-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
+    color: var(--primary-font-color);
 }
