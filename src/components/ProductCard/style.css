@@ -1,5 +1,5 @@
 .product {
-    transition: var(--transition-time);
+    transition: var(--transition-time, .3s);
     width: 195px;
     height: 285px;
 }
@@ -14,7 +14,7 @@
 }
 
 .product-info {
-    padding: var(--product-padding);
+    padding: var(--product-padding, 10px);
 }
 
 .product-name {

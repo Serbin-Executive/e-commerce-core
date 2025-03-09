@@ -4,12 +4,12 @@
     position: fixed;
     display: flex;
     align-items: center;
-    padding: var(--content-padding);
-    max-width: var(--content-width);
-    background-color: var(--primary-background-color);
-    box-shadow: var(--default-shadow);
-    min-height: var(--navbar-height);
-    border-radius: 0 0 var(--content-radius-primary) var(--content-radius-primary);
+    padding: var(--content-padding, 16px);
+    max-width: var(--content-width, 1100px);
+    background-color: var(--primary-background-color, #F4F4F4);
+    box-shadow: var(--default-shadow,  0 0 4px 0 var(--default-shadow-color, rgba(23, 28, 23, 0.58)));
+    min-height: var(--navbar-height, 75px);
+    border-radius: 0 0 var(--content-radius-primary, 18px) var(--content-radius-primary, 18px);
     top: 0;
 }
 

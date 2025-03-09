@@ -3,8 +3,8 @@
     gap: 40px;
     width: 100%;
     padding: 20px 40px;
-    border-radius: var(--content-radius-primary) var(--content-radius-primary) 0 0;
-    background-color: var(--accent-passive-color);
+    border-radius: var(--content-radius-primary, 18px) var(--content-radius-primary, 18px) 0 0;
+    background-color: var(--accent-passive-color, #446E61);
 }
 
 .footer-logo-container .logo-button {

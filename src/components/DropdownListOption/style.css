@@ -1,5 +1,5 @@
 .dropdown-list-option {
-    --option-height: var(--control-elements-height);
+    --option-height: var(--control-elements-height, 45px);
 
     width: 100%;
     display: flex;
@@ -10,7 +10,7 @@
 }
 
 .dropdown-list-option.selected {
-    color: var(--accent-active-color);
+    color: var(--accent-active-color, #67446E);
 }
 
 .dropdown-list-option-value {

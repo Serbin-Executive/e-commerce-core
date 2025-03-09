@@ -9,10 +9,10 @@ button.logo-button:hover {
 }
 
 button.logo-button{
-    transition: var(--transition-time);
+    transition: var(--transition-time, .3s);
 }
 
 button.logo-button:hover {
     cursor: pointer;
-    transform: var(--elements-hover-rotation);
+    transform: var(--elements-hover-rotation, rotate(4deg));
 }
