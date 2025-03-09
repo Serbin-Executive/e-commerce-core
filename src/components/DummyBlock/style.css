@@ -1,0 +1,19 @@
+.dummy-block {
+    width: 100%;
+    height: 80vh;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dummy-block-content .icon-container{
+    width: 115px;
+    margin: auto;
+}
+
+.dummy-block-content .dummy-text {
+    text-align: center;
+    max-width: 220px;
+    margin-top: 8px;
+}

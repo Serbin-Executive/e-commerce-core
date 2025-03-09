@@ -13,6 +13,7 @@ button.icon-button:hover {
 
 button.icon-button:hover {
     cursor: pointer;
+    transform: var(--elements-hover-rotation);
 }
 
 button.icon-button.disabled {

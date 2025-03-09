@@ -24,6 +24,7 @@
     --transition-time: .3s;
 
     --disabled-filter: grayscale(.3);
+    --elements-hover-rotation: rotate(4deg);
 }
 
 @font-face {

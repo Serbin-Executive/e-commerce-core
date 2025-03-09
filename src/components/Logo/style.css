@@ -5,10 +5,14 @@ button.logo-button:hover {
     background: none;
     border: none;
     outline: none;
-
     display: block;
+}
+
+button.logo-button{
+    transition: var(--transition-time);
 }
 
 button.logo-button:hover {
     cursor: pointer;
+    transform: var(--elements-hover-rotation);
 }
