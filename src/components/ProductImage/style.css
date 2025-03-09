@@ -1,8 +1,8 @@
 .product-image-slider {
     flex-shrink: 0;
     aspect-ratio: 1/1;
-    background-color: var(--image-background-color);
-    border-radius: var(--content-radius-primary);
+    background-color: var(--image-background-color, #D9D9D9);
+    border-radius: var(--content-radius-primary, 18px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
 
 img.product-image {
     width: 100%;
-    transition: var(--transition-time);
+    transition: var(--transition-time, .3s);
 }
 
 img.product-image.contain {
@@ -19,6 +19,6 @@ img.product-image.contain {
 }
 
 img.product-image.none {
-    border-radius: var(--content-radius-primary);
+    border-radius: var(--content-radius-primary, 18px);
     aspect-ratio: 1/1;
 }

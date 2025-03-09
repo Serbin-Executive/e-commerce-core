@@ -1,5 +1,5 @@
 button.icon-button {
-    transition: var(--transition-time);
+    transition: var(--transition-time, .3s);
 }
 
 button.icon-button,
@@ -13,7 +13,7 @@ button.icon-button:hover {
 
 button.icon-button:hover {
     cursor: pointer;
-    transform: var(--elements-hover-rotation);
+    transform: var(--elements-hover-rotation, rotate(4deg));
 }
 
 button.icon-button.disabled {

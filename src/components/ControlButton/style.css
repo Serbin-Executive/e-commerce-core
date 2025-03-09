@@ -17,22 +17,22 @@ button.control-button {
 }
 
 button.control-button.primary {
-    color: var(--primary-fill-color);
-    background-color: var(--accent-passive-color);
+    color: var(--primary-fill-color, #FFFFFF);
+    background-color: var(--accent-passive-color, #446E61);
 }
 
 button.control-button.primary:hover {
-    background-color: var(--accent-active-color);
+    background-color: var(--accent-active-color, #67446E);
     cursor: pointer;
 }
 
 button.control-button.outlined {
     color: var(--accent-passive-color);
-    border: 1px solid var(--accent-passive-color);
+    border: 1px solid var(--accent-passive-color, #446E61);
 }
 
 button.control-button.outlined:hover {
     color: var(--accent-active-color);
-    border-color: var(--accent-active-color);
+    border-color: var(--accent-active-color, #67446E);
     cursor: pointer;
 }
