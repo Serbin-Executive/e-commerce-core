@@ -5,7 +5,7 @@ import "./style.css";
 import DummyBlock from "@components/DummyBlock";
 
 export interface IProductsListProps {
-    products: IProduct[];
+    products: IProduct[] | undefined;
 }
 
 const ProductsList = memo(({ products }: IProductsListProps): ReactElement => {

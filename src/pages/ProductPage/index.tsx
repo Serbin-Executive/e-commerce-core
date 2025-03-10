@@ -1,23 +1,27 @@
-import NotFoundPage from "@pages/NotFoundPage";
-import API_Emulated from "@services/API_Emulated";
-import ProductShoppingInfo from "@components/ProductShoppingInfo";
-import ProductStoryBlock from "@components/ProductStoryBlock";
-import ProductImage from "@components/ProductImage";
-import ProductCharacteristics from "@components/ProductCharacteristics";
 import type IProduct from "@domains/Product";
+import NotFoundPage from "@pages/NotFoundPage";
+import ProductImage from "@components/ProductImage";
+import ProductsContext from "@context/ProductsContext";
+import ProductStoryBlock from "@components/ProductStoryBlock";
+import ProductShoppingInfo from "@components/ProductShoppingInfo";
+import ProductCharacteristics from "@components/ProductCharacteristics";
+import { useContext, type ReactElement } from "react";
+import { getProductById } from "@api/index";
 import { useParams } from "react-router";
-import { type ReactElement } from "react";
 import "./style.css";
 
-const ProductPage = (): ReactElement => {
+const ProductPage = (): ReactElement => { 
+    let product: IProduct | undefined;
     const { productId } = useParams();
+    const { currentProduct } = useContext(ProductsContext);
 
     if (!productId) {
         return <NotFoundPage />;
     }
 
-    const product: IProduct | undefined =
-        API_Emulated.getProductById(productId);
+    if (currentProduct?.id !== productId) {
+        product = getProductById(productId);
+    }
 
     if (!product) {
         return <NotFoundPage />;
@@ -28,7 +32,7 @@ const ProductPage = (): ReactElement => {
             <div className="shopping-block">
                 <div className="product-image-container">
                     <ProductImage
-                        src={product.images[0].src}
+                        src={product.images[0].src} // TODO gallery
                         name={product.name}
                     />
                 </div>

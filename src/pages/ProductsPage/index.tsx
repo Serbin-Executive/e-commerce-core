@@ -1,13 +1,18 @@
 import type IProduct from "@domains/Product";
-import API_Emulated from "@services/API_Emulated";
 import ProductsList from "@components/ProductsList";
-import { type ReactElement } from "react";
+import ProductsContext from "@context/ProductsContext";
+import { useContext, useMemo, type ReactElement } from "react";
+import { getProducts } from "@api/index";
 import "./style.css";
 
 export const INITIAL_SEARCH_VALUE: string = "";
 
 const ProductsPage = (): ReactElement => {
-    const products: IProduct[] = API_Emulated.getProducts();
+    const { productQuery } = useContext(ProductsContext);
+
+    const products: IProduct[] | undefined = useMemo(() => {
+        return getProducts(productQuery);
+    }, [productQuery]);
 
     return (
         <div className="products-page">

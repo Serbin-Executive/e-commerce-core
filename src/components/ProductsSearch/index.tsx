@@ -5,15 +5,27 @@ import { useContext, type ReactElement } from "react";
 import "./style.css";
 
 const ProductsSearch = (): ReactElement => {
-    const { isSearchModeEnabled } = useContext(ProductsContext);
+    const { productQuery, setProductQuery, isSearchModeEnabled } =
+        useContext(ProductsContext);
+
+    if (!isSearchModeEnabled) {
+        return (
+            <div className="products-search">
+                <SelectsGroup />
+            </div>
+        );
+    }
+
+    const updateSearchQuery = (newValue: string): void => {
+        setProductQuery(newValue.toLowerCase());
+    };
 
     return (
         <div className="products-search">
-            {!isSearchModeEnabled ? (
-                <SelectsGroup />
-            ) : (
-                <SearchBar initialValue={""} onChange={undefined} />
-            )}
+            <SearchBar
+                initialValue={productQuery}
+                onChange={updateSearchQuery}
+            />
         </div>
     );
 };
