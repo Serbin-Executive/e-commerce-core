@@ -9,8 +9,8 @@ export default class API_Emulated {
             return productsList;
         }
 
-        return productsList.filter(
-            (product: IProduct) => product.name === query
+        return productsList.filter((product: IProduct) =>
+            product.name.toLowerCase().includes(query)
         );
     }
 

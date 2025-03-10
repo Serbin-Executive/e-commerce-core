@@ -22,16 +22,16 @@ const SearchBar = ({
     return (
         <div className="search-bar-container">
             <input
-                className="search-bar control-text"
-                type="search"
                 value={query}
-                placeholder={"Поиск"}
+                type="search"
+                placeholder="Поиск"
                 onChange={handleQueryChange}
+                className="search-bar control-text"
             />
 
             <SpriteIcon
-                iconId={`${SpriteIconsIds.SEARCH}${SpriteIconsTypesSuffixes.SECONDARY}`}
                 width="16px"
+                iconId={`${SpriteIconsIds.SEARCH}${SpriteIconsTypesSuffixes.SECONDARY}`}
             />
         </div>
     );
